@@ -1,0 +1,52 @@
+<!--service.ui-->
+<template>
+  <ui-page>
+    <ui-nav-bar slot="nav-bar" class="nav_bar">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="center" space-left="10">
+          <ui-view class="search" bindtap="showFullScreenSearch">
+            <ui-row height="30">
+              <ui-col vertical-align="middle" align="center" width="30">
+                <ui-icon name="search" size="16" color="#ccc"></ui-icon>
+              </ui-col>
+              <ui-col vertical-align="middle" align="left">
+                <ui-view>百人记</ui-view>
+              </ui-col>
+            </ui-row>
+          </ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" width="40">
+          <ui-icon name="message" size="24" color="#525252"></ui-icon>
+        </ui-col>
+      </ui-row>
+    </ui-nav-bar>
+
+
+    <ui-view class="service_content" ui:for="{{ service }}" ui:for-item="item">
+      <ui-row class="plate_title" height="40">
+        <ui-col vertical-align="middle" align="left" width="25" space-left="10">
+          <ui-view class="line"></ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left">
+          <ui-view class="title">{{item.title}}</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="right" space-right="10">
+          <ui-view class="right" ui:if="{{ item.rightTitle===''? false:true }}">
+            {{item.rightTitle}}
+            <ui-icon name="arrow-right" size="14" color="#DFDDDF"></ui-icon>
+          </ui-view>
+        </ui-col>
+      </ui-row>
+      <ui-view class="content">
+        <ui-view class="item" ui:for="{{ item.list }}" ui:for-item="item2">
+          <ui-view>
+            <ui-icon name="{{ item2.icon }}" size="30" color="{{ item2.color }}"></ui-icon>
+            <ui-text block>{{ item2.name }}</ui-text>
+          </ui-view>
+        </ui-view>
+      </ui-view>
+    </ui-view>
+    
+
+  </ui-page>
+</template>

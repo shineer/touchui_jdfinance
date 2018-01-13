@@ -1,0 +1,316 @@
+// home.less
+.nav_bar{
+  background-color: #fff;
+}
+
+.ui-tabs {
+  padding-bottom: 1px;
+  height: 44px;
+  // width:80%;
+  &.type-common {
+    .swiper-slide {
+      transition: color .1s;
+    }
+    .active {
+      color: #2F53FE;
+    }
+    .ui-view{
+      font-size:16px;
+      position:relative;
+      .mix-flex-center();
+    }
+    
+    .ui-text{
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+      background-color: #385BFF;
+      font-size: 10px;
+      color: #fff;
+      margin-right: 5px;
+      display: inline-block;
+      line-height: 14px;
+      &.icon_02{
+        background-color: #2AB2B1;
+      }
+      &.icon_03{
+        background-color: #ED1E2B;
+      }
+    }
+  }
+  &.common0{
+    .active {
+      color: #2F53FE;
+    }
+    .ui-tabs-ink-bar-inner{
+      border-color: #2F53FE!important;
+    }
+  }
+  &.common1{
+    .active {
+      color: #2AB2B1;
+    }
+    .ui-tabs-ink-bar-inner{
+      border-color: #2AB2B1!important;
+    }
+  }
+  &.common2{
+    .active {
+      color: #ED1E2B;
+    }
+    .ui-tabs-ink-bar-inner{
+      border-color: #ED1E2B!important;
+    }
+  }
+}
+.scroll_view{
+  overflow-y: scroll;
+  /*解决ios上滑动不流畅*/
+  -webkit-overflow-scrolling: touch;
+}
+.tab_content_wrap{
+  // padding: 10px;
+  .swiper-slide {
+    .ui-image {
+      width: 90%;
+      margin: auto;
+    }
+  }
+  .tab_content{
+    width: 100%;
+  }
+  .banner{
+    // width: 90%;
+    border-radius: 3px;
+    background: linear-gradient(to right, #4888FC, #2E52E3);
+    padding: 20px;
+    // margin: 10px auto;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0px 4px 13px -5px #a0a0a0;
+    // .mix-flex-center();
+    .title1{
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .title2{
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+    .ui-view{
+      background-color: #fff;
+      border-radius: 25px;
+      font-size: 14px;
+      line-height: 30px;
+      width: 70%;
+      margin: 0 auto;
+      color: #3756E2;
+    }
+
+    &.banner1{
+      background: linear-gradient(to right, #2CBABE, #2195D0);
+      .ui-view{
+        color: #39B5DB;
+      }
+    }
+
+    &.banner2{
+      background: linear-gradient(to right, #F55042, #F52F35);
+      .ui-view{
+        color: #F65B5F;
+      }
+    }
+  }
+  .money_matters_wrap{
+    padding:10px 10px 0 10px;
+    background-color: #fff;
+  }
+  .money_matters{
+    .mix-1px(0, 0, 1, 0, #ccc);
+    .icon_wrap{
+      width: 16px;
+      height: 16px;
+      background-color: #D5A861;
+      border-radius: 3px;
+      line-height: 14px;
+      margin-top: 25px;
+      text-align: center;
+    }
+    .title1{
+      color: #2A2A2A;
+      font-size: 14px;
+    }
+    .title2{
+      color: #F77321;
+      font-size: 12px;
+    }
+    .title1_1,
+    .title2_1{
+      color: #959595;
+      font-size: 12px;
+    }
+    .title1_2{
+      display: inline-block;
+      padding: 0 3px;
+      color: #F77321;
+      font-size: 12px;
+      background-color: #FEEBDB;
+    }
+  }
+  .category{
+    background-color: #F9F9F9;
+    .title1{
+      font-size: 16px;
+      color: #2A2A2A;
+      padding-left: 10px;
+    }
+    .title2{
+      color: #959595;
+      font-size: 12px;
+      padding-left: 10px;
+    }
+    .line{
+      background-color: #fff;
+    }
+  }
+  .login_look{
+    line-height: 60px;
+    // margin-bottom: 10px;
+    .mix-1px(1, 0, 0, 0, #ccc);
+    font-size: 12px;
+    text-align: center;
+    color: #2863F2;
+    background-color: #fff;
+    &.login_look2{
+      .mix-1px(0, 0, 0, 0, #ccc);
+    }
+  }
+  .risk_free{
+    padding: 10px 0;
+    margin: 10px 0;
+    background-color: #fff;
+    .title{
+      font-size: 14px;
+      color: #3AB585;
+      line-height: 40px;
+      text-align: center;
+    }
+    .item{
+      height: 20px;
+      line-height: 20px;
+    }
+    .roller-text{
+      .mix-text-overflow();
+    }
+    .ui-col{
+      font-size: 12px;
+      color: #6F6F6F;
+      text-align: center;
+    }
+  }
+}
+
+
+
+
+
+//启动页样式
+.splash_wrap {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 999999;
+  .splash_swiper{
+    width: 100%;
+    height: 100%;
+    .swiper-pagination-bullets, 
+    .swiper-pagination-custom, 
+    .swiper-pagination-fraction{
+      bottom:200rpx;
+    }
+    .swiper-pagination-bullet{
+      background-color: #adadad;
+    }
+    .swiper-pagination-bullet-active{
+      background-color: #9F9F9F;
+    }
+  }
+  .swiper-slide {
+    height: 100%;
+  }
+  .splash_swiper_content{
+    width: 100%;
+    height: 100%;
+  }
+  .splash_swiper01{
+    background: url('~images/splash_swiper01.png') no-repeat center center;
+    background-size: 100%;
+  }
+  .splash_swiper02{
+    background: url('~images/splash_swiper02.png') no-repeat center center;
+    background-size: 100%;
+  }
+  .splash_swiper03{
+    background: url('~images/splash_swiper03.png') no-repeat center center;
+    background-size: 100%;
+  }
+  .splash_swiper04{
+    background: url('~images/splash_swiper04.png') no-repeat center center;
+    background-size: 100%;
+  }
+  .splash_into{
+    width: 300rpx;
+    height: 80rpx;
+    position: absolute;
+    bottom: 80rpx;
+    left: 50%;
+    margin-left: -150rpx;
+    border-radius: 25px;
+    border: 1px solid #F77542;
+    color: #F77542;
+    font-size: 36rpx;
+    text-align: center;
+    line-height: 76rpx;
+  }
+}
+
+// 引导页
+
+.guidance{
+  .guidance_head{
+    .ui-row{
+      width: 100%;
+      background-color: #fff;
+      border-radius: 25px;
+      // padding: 0 20px;
+      .ui-view{
+        font-size:16px;
+        position:relative;
+        .mix-flex-center();
+      }
+      .ui-text{
+        width: 14px;
+        height: 14px;
+        border-radius: 4px;
+        background-color: #385BFF;
+        font-size: 10px;
+        color: #fff;
+        margin-right: 5px;
+        display: inline-block;
+        line-height: 14px;
+        &.icon_02{
+          background-color: #2AB2B1;
+        }
+        &.icon_03{
+          background-color: #ED1E2B;
+        }
+      }
+    }
+  }
+  .guidance_content{
+    height: 150px;
+    background: url('~images/guidance.png') no-repeat center 75%;
+    background-size: 65%;
+  }
+}

@@ -1,0 +1,137 @@
+<!--greenHand.ui-->
+<template>
+  <ui-page>
+    <ui-nav-bar slot="nav-bar" class="nav_bar">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="left" width="40" space-left="10" bindtap="navigateBack">
+          <ui-icon name="arrow-left" size="16" color="#fff"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center">
+          <ui-view class="title">小白理财</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="right" width="40" space-right="10">
+          <ui-icon name="share" size="20" color="#fff"></ui-icon>
+        </ui-col>
+      </ui-row>
+    </ui-nav-bar>
+
+    <ui-view class="top_tip" ui:show="{{ isTip }}">
+      <ui-view class="title">定期理财最优质产品</ui-view>
+      <ui-row height="40">
+        <ui-col vertical-align="middle" align="right">
+          <ui-view>精选最优</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="21">
+          <ui-view class="line"></ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="60">
+          <ui-view>收益稳健</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="21">
+          <ui-view class="line"></ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left">
+          <ui-view>安全理财</ui-view>
+        </ui-col>
+      </ui-row>
+      <ui-view class="close" bindtap="close">
+        <ui-icon name="close" size="16" color="#fff"></ui-icon>
+      </ui-view>
+    </ui-view>
+
+    <ui-view class="wrap">
+      <ui-view class="banner">
+        <ui-image src="{{ require('#/images/greenHand01.png') }}"></ui-image>
+      </ui-view>
+      <ui-row height="30" class="time">
+        <ui-col vertical-align="bottom" align="right">
+          <ui-view>短期</ui-view>
+        </ui-col>
+        <ui-col vertical-align="bottom" align="center" width="21">
+          <ui-view class="line"></ui-view>
+        </ui-col>
+        <ui-col vertical-align="bottom" align="left">
+          <ui-view>1个月</ui-view>
+        </ui-col>
+      </ui-row>
+
+      <ui-row height="60" class="time2">
+        <ui-col vertical-align="middle" align="center">
+          <ui-view>
+            <ui-text>超短期</ui-text>
+            <ui-text>|</ui-text>
+            <ui-text>14天</ui-text>
+          </ui-view>
+          <ui-view>4.70%</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center">
+          <ui-view class="center_num">5.14%</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center">
+          <ui-view>
+            <ui-text>中短期</ui-text>
+            <ui-text>|</ui-text>
+            <ui-text>49天</ui-text>
+          </ui-view>
+          <ui-view>5.06%</ui-view>
+        </ui-col>
+      </ui-row>
+      <ui-view class="earnings">七日年化收益率</ui-view>
+      <ui-view class="exclusive">
+        <ui-text>小金库理财金专享</ui-text>
+      </ui-view>
+
+
+      <ui-view class="ruler_wrap">
+        <ui-view class="shift_to">我要转入(元)</ui-view>
+        <ui-view class="ruler_win">
+        <ui-ruler
+          height="35"
+          key-line-height="10"
+          line-height="5"
+          min="0"
+          max="100000"
+          key-step="1000"
+          number-size="12"
+          line-width="1"
+          step-width='5'
+          color="#E0E0E0"
+          pointer-width="1"
+          pointer-color="#F77323"
+          number-color="#E0E0E0"
+          number-padding="20"
+        ></ui-ruler>
+        </ui-view>
+        <ui-view class="earnings">总计可得(元)</ui-view>
+        <ui-view class="money">0.00</ui-view>
+        <ui-view class="earnings">(据七日年化收益率1个月可赚41.28)</ui-view>
+      </ui-view>
+
+      <ui-summary height="85">
+        <ui-view class="column">
+          <ui-row ui:for="{{ column }}">
+            <ui-col vertical-align="top" align="left" width="80" space-left="10">
+              <ui-view>{{ item.title }}</ui-view>
+            </ui-col>
+            <ui-col vertical-align="top" align="left" space-right="10">
+              <ui-text>{{ item.content }}</ui-text>
+            </ui-col>
+          </ui-row>
+          <!-- <ui-row height="40">
+            <ui-col vertical-align="middle" align="left"  space-left="10">
+              <ui-text>查看更多详情</ui-text>
+            </ui-col>
+            <ui-col vertical-align="middle" align="right" space-right="10">
+              <ui-icon name="arrow-right" size="16" color="#E0E0E0"></ui-icon>
+            </ui-col>
+          </ui-row> -->
+        </ui-view>
+      </ui-summary>
+
+    </ui-view>
+    <ui-fixed-view bottom="57">
+      <ui-view class="text">这款产品非常抢手，今日已有<ui-text>3641</ui-text>人购买</ui-view>
+      <ui-view class="buy">立即购买</ui-view>
+    </ui-fixed-view>
+  </ui-page>
+</template>

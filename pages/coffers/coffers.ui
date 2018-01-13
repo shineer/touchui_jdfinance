@@ -1,0 +1,174 @@
+<!--coffers.ui-->
+<template>
+  <ui-page>
+    <ui-view style="padding-bottom:46px">
+      <ui-view class="wrap">
+        <ui-swiper pagination loop autoplay="{{ autoplay }}" class="banner">
+          <ui-swiper-item ui:for="{{ banner }}">
+            <ui-view class="banner_content">
+              <ui-image
+              src="{{ item.src }}"
+              ></ui-image>
+            </ui-view>
+          </ui-swiper-item>
+        </ui-swiper>
+        <ui-view class="experience">
+          <ui-view>立即登录体验</ui-view>
+        </ui-view>
+      </ui-view>
+
+      <ui-view class="wrap">
+        <ui-swiper pagination loop autoplay="{{ autoplay2 }}" class="banner banner2">
+          <ui-swiper-item ui:for="{{ banner2 }}">
+            <ui-view class="banner_content">
+              <ui-image
+              src="{{ item.src }}"
+              ></ui-image>
+            </ui-view>
+          </ui-swiper-item>
+        </ui-swiper>
+      
+        <ui-row height="80" class="earnings">
+          <ui-col vertical-align="middle" align="left" width="70" space-left="15">
+            <ui-view class="icon">
+              <ui-icon name="discount-coupon" size="24" color="#fff"></ui-icon>
+            </ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="left">
+            <ui-text block class="title1">每日抢券</ui-text>
+            <ui-text block class="title2">小金库满减购物券</ui-text>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center" width="3">
+            <ui-view class="line"></ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="left" width="70" space-left="15">
+            <ui-view class="icon icon2">
+              <ui-icon name="boon" size="24" color="#fff"></ui-icon>
+            </ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="left">
+            <ui-text block class="title1">做任务领福利</ui-text>
+            <ui-text block class="title2">领小金库红包</ui-text>
+          </ui-col>
+        </ui-row>
+      </ui-view>
+
+
+      <ui-view class="wrap">
+        <ui-view class="column_title">买理财更赚钱</ui-view>
+        <ui-row height="80" class="money_matters" ui:for="{{ moneyMatters }}" >
+          <ui-col vertical-align="middle" align="left" space-left="15" width="130">
+            <ui-text block class="title1">{{ item.title1 }}</ui-text>
+            <ui-text block class="title2">{{ item.title1_1 }}</ui-text>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center" width="3">
+            <ui-view class="line"></ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="left" space-left="15">
+            <ui-text block class="title3">{{ item.title2 }}</ui-text>
+            <ui-text block class="title2">{{ item.title2_2 }}</ui-text>
+          </ui-col>
+        </ui-row>
+        
+        <ui-view class="column_list">
+            <ui-view>
+              <ui-icon name="column_list01" size="16" color="#C39A61"></ui-icon>定期
+            </ui-view>
+            <ui-view>
+              <ui-icon name="column_list02" size="16" color="#C39A61"></ui-icon>基金
+            </ui-view>
+            <ui-view>
+              <ui-icon name="gold-bar" size="16" color="#C39A61"></ui-icon>黄金
+            </ui-view>
+            <ui-view>
+              <ui-icon name="column_list03" size="16" color="#C39A61"></ui-icon>机智账户
+            </ui-view>
+        </ui-view>
+      </ui-view>
+
+
+      <ui-view class="wrap">
+        <ui-view class="column_title">惠生活更轻松</ui-view>
+        <ui-swiper pagination class="hui_life">
+          <ui-swiper-item ui:for="{{ huiLife }}" ui:for-item="item">
+            <ui-row height="80" class="earnings life_content"  ui:for="{{ item.lifeContent }}" ui:for-item="item2">
+              <ui-col vertical-align="middle" align="left" width="70" space-left="15">
+                <ui-view class="icon" style="{{{ 'background-color':item2.bgColor1 }}}">
+                  <ui-icon name="{{ item2.icon1 }}" size="24" color="#fff"></ui-icon>
+                </ui-view>
+              </ui-col>
+              <ui-col vertical-align="middle" align="left">
+                <ui-text block class="title1">{{ item2.title1 }}</ui-text>
+                <ui-text block class="title2">{{ item2.title1_1 }}</ui-text>
+              </ui-col>
+              <ui-col vertical-align="middle" align="center" width="3">
+                <ui-view class="line"></ui-view>
+              </ui-col>
+              <ui-col vertical-align="middle" align="left" width="70" space-left="15">
+                <ui-view class="icon icon2"  style="{{{ 'background-color':item2.bgColor2 }}}" ui:if="{{ item2.icon2===''?false:true }}">
+                  <ui-icon name="{{ item2.icon2 }}" size="24" color="#fff"></ui-icon>
+                </ui-view>
+              </ui-col>
+              <ui-col vertical-align="middle" align="left">
+                <ui-text block class="title1">{{ item2.title2 }}</ui-text>
+                <ui-text block class="title2">{{ item2.title2_2 }}</ui-text>
+              </ui-col>
+            </ui-row>
+          </ui-swiper-item>
+        </ui-swiper>
+      </ui-view>
+
+
+      <ui-view class="wrap">
+        <ui-view class="column_title">存钱有理</ui-view>
+        <ui-view class="credit_banner">
+          <ui-scroll-view scroll-x height="160">
+            <ui-view class="content">
+              <ui-view class="item" ui:for="{{ credit_banner2 }}">
+                <ui-image
+                  src="{{ item.src }}"
+                ></ui-image>
+              </ui-view>
+            </ui-view>
+          </ui-scroll-view>
+        </ui-view>
+      </ui-view>
+
+      <ui-view class="wrap">
+        <ui-row height="50" class="strategy">
+          <ui-col vertical-align="middle" align="left" width="50" space-left="15">
+            <ui-icon name="strategy" size="24" color="#BF9356"></ui-icon>
+          </ui-col>
+          <ui-col vertical-align="middle" align="left">
+            <ui-view>小金库使用攻略</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center" width="40" space-right="10">
+            <ui-icon name="arrow-right" size="16" color="#DFDDDF"></ui-icon>
+          </ui-col>
+        </ui-row>
+        <ui-row height="50" class="strategy strategy2">
+          <ui-col vertical-align="middle" align="left" width="50" space-left="15">
+            <ui-icon name="help" size="24" color="#BF9356"></ui-icon>
+          </ui-col>
+          <ui-col vertical-align="middle" align="left">
+            <ui-view>小金库帮助中心</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center" width="40" space-right="10">
+            <ui-icon name="arrow-right" size="16" color="#DFDDDF"></ui-icon>
+          </ui-col>
+        </ui-row>
+      </ui-view>
+
+    </ui-view>
+
+    <ui-fixed-view class="shift" bottom="0" left="0">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="center">转出</ui-col>
+        <ui-col vertical-align="middle" align="center" width="2">
+          <ui-view class="line"></ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center">转入</ui-col>
+      </ui-row>
+    </ui-fixed-view>
+  </ui-page>
+</template>

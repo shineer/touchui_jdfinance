@@ -1,0 +1,308 @@
+// fundChoiceness.less
+.nav_bar{
+  background: linear-gradient(to right, #3C47FC, #3D66FC);
+  .title{
+    color: #fff;
+    font-size: 16px;
+  }
+}
+.wrap{
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+// swiper分页样式
+.swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+  bottom: 5px;
+}
+.swiper-pagination-bullet{
+  width: 5px;
+  height: 5px;
+}
+.swiper-pagination-bullet-active{
+  background-color: #989898;
+}
+.banner{
+  background-color: #fff;
+  .banner_content{
+    height: 90px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    .ui-image{
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+  .swiper-pagination-bullets{
+    bottom: 0px;
+  }
+}
+
+
+.column{
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+ 
+  .item{
+    width: 20%;
+    height: 70px;
+    text-align: center;
+    .mix-flex-center();
+    color: #656565;
+    font-size: 12px;
+     position: relative;
+    .icon-badge {
+      background-color: #F76814;
+      position: absolute;
+      top: 2px;
+      left: 35px;
+      border: 1px solid #fff;
+      border-radius: 8px 8px 8px 0px;
+      font-size: 10px;
+      padding: 0 4px;
+      white-space: nowrap;
+    }
+  }
+}
+
+.notice{
+  .mix-1px(1, 0, 0, 0, #e4e4e4);
+  .ui-view{
+    color: #5C5C5C;
+    font-size: 14px;
+    line-height: 30px;
+  }
+}
+
+
+.sign_in{
+  // .mix-flex-center();
+  text-align: center;
+  padding: 15px 0 25px 0;
+  .title1{
+    color: #2e2e2e;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .title2{
+    color: #F77E2F;
+    font-size: 14px;
+    .ui-text{
+      color: #A6A6A6;
+    }
+  }
+  .title3{
+    color: #F76814;
+    font-size: 30px;
+    .ui-text{
+      font-size: 16px;
+      &.add{
+        font-size: 18px;
+        margin: 0 10px;
+      }
+    }
+  }
+  .title4{
+    color: #A6A6A6;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .sign{
+    width: 50%;
+    margin: 0 auto;
+    background: linear-gradient(to right, #F0291B, #EF3F1C);
+    box-shadow: 0px 4px 20px -3px #a0a0a0;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 25px;
+  }
+}
+
+.column_title{
+  .mix-1px(0, 0, 1, 0, #e4e4e4);
+  .ui-view{
+    color: #2E2E2E;
+    font-size: 18px;
+    font-weight: 500;
+    &.right_title{
+      color: #F88A3D;
+      font-size: 14px;
+      font-weight: 0;
+      text-align: right
+    }
+  }
+  &.column_title2{
+    .mix-1px(0, 0, 0, 0, #e4e4e4);
+  }
+}
+
+.speed_up{
+  .ui-image{
+    width: 50px;
+  }
+  .title1{
+    color: #2E2E2E;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .title2{
+    color: #F99853;
+    font-size: 14px;
+  }
+}
+
+
+.hotspot{
+  .left{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px dashed #EE0005;
+    line-height: 50px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #EE0005;
+    &.left2{
+      color: #475888;
+      border: 1px dashed #475888;
+    }
+  }
+  .right{
+    text-align: right;
+    font-size: 14px;
+    color: #939393;
+    &.right2{
+      color: #F88A3D;
+    }
+  }
+  .title1{
+    color: #2E2E2E;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .title2{
+    color: #939393;
+    font-size: 14px;
+  }
+  .line{
+    .mix-1px(0, 0, 1, 0, #e4e4e4);
+    // &:last-child.line{
+    //   .mix-1px(0, 0, 0, 0, #e4e4e4);
+    // }
+  }
+}
+.look_more{
+  .mix-1px(1, 0, 0, 0, #e4e4e4);
+  text-align: center;
+  line-height: 50px;
+  color: #598cf1;
+  font-size: 14px;
+}
+
+.money_matters{
+  .mix-1px(1, 0, 0, 0, #e4e4e4);
+  &:first-child.money_matters{
+    .mix-1px(0, 0, 0, 0, #e4e4e4);
+  }
+  .line{
+    width: 1px;
+    height: 50px;
+    // background-color: #e4e4e4;
+    .mix-1px(0, 1, 0, 0, #e4e4e4);
+  }
+  .title1{
+    color: #F6620F;
+    font-size: 24px;
+  }
+  .title3{
+    color: #2E2E2E;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .title2{
+    font-size: 14px;
+    color: #939393;
+  }
+}
+
+.credit_banner{
+  .content{
+    width:480px;
+    .mix-clearfix();
+  }
+  .item{
+    width: 145px;
+    height: 90px;
+    float: left;
+    margin-left: 10px;
+    .ui-image{
+      width: 100%;
+    }
+    &:first-child.item{
+     margin-left: 15px;
+    }
+  }
+  &.credit_banner2{
+    .content{
+      width:635px;
+      padding-top: 10px;
+    }
+    .item{
+      background-color: #fff;
+      box-shadow: 0px 0px 15px -3px #dadada;
+      .mix-flex-center();
+      .ui-image{
+        width: 90%;
+      }
+    }
+  }
+}
+
+.fund_article{
+  .mix-1px(1, 0, 0, 0, #e4e4e4);
+  padding: 10px 0;
+  .title{
+    .ui-image{
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+    .name{
+      color: #414141;
+      font-size: 12px;
+    }
+    .time{
+      color: #A5A5A5;
+      font-size: 12px;
+    }
+  }
+  .article_content{
+    padding: 10px 0;
+    .title{
+      color: #2E2E2E;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .content{
+      width: 100%;
+      color: #969696;
+      font-size: 14px;
+      .mix-text-overflow();
+    }
+    .ui-image{
+      width: 80px;
+    }
+  }
+  .operation{
+    color: #969696;
+    font-size: 14px;
+    .ui-view{
+      line-height: 40px;
+    }
+  }
+}

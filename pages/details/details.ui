@@ -1,0 +1,145 @@
+<!--details.ui-->
+<template>
+  <ui-page>
+    <ui-nav-bar slot="nav-bar" class="nav_bar">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="left" space-left="10"  width="40" bindtap="navigateBack">
+           <ui-icon name="arrow-left" size="16" color="#4E4E4E"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left" space-left="10">
+          <ui-view class="title">动态详情</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" width="40"></ui-col>
+      </ui-row>
+    </ui-nav-bar>
+    <ui-view class="details_content" style="{{{ height:contentHeight-50+'px' }}}">
+      <ui-view class="service_content">
+        <ui-row height="40" class="head">
+          <ui-col vertical-align="middle" align="left" width="40" space-left="10">
+            <ui-image src="{{ require('#/images/head.jpg') }}"></ui-image>
+          </ui-col>
+          <ui-col vertical-align="middle" align="left"  space-left="5">
+            <ui-view>华夏基金</ui-view>
+          </ui-col>
+        </ui-row>
+        <ui-view class="content">
+          <ui-text block>华夏基金新闻早知道（1月2日）</ui-text>
+          <ui-text></ui-text>
+          <ui-text class="text">新年新气象，今日大盘多半会走高，如您手中持有2017年冠军基，根据往年大盘漂移经验，建议在2018年继续持有要慎重。</ui-text>
+          <ui-view>
+            <ui-image src="{{ require('#/images/service_banner05.png') }}"></ui-image>
+          </ui-view>
+          <ui-row height="40" class="bottom">
+            <ui-col vertical-align="bottom" align="left" width="80">
+              <ui-view>
+                <ui-view class="praise">8个赞</ui-view>
+              </ui-view>
+            </ui-col>
+            <ui-col vertical-align="bottom" align="right">
+              <ui-view class="praise_wrap">
+                  <ui-image src="{{ require('#/images/user_avatar_000.png') }}" style="z-index:5"></ui-image>
+                  <ui-image src="{{ require('#/images/user_avatar_001.png') }}" style="z-index:4"></ui-image>
+                  <ui-image src="{{ require('#/images/user_avatar_002.png') }}" style="z-index:3"></ui-image>
+                  <ui-image src="{{ require('#/images/user_avatar_003.png') }}" style="z-index:2"></ui-image>
+                  <ui-image src="{{ require('#/images/user_avatar_004.png') }}" style="z-index:1"></ui-image>
+                  <ui-view>
+                    <ui-icon name="more" size="16" color="#878787"></ui-icon>
+                  </ui-view>
+              </ui-view>
+            </ui-col>
+          </ui-row>
+        </ui-view>
+      </ui-view>
+      <ui-view class="comment_wrap">
+        <ui-view class="title">共2条评论</ui-view>
+
+        <ui-row class="comment_content" space-bottom="10" ui:for="{{ commentContent }}">
+          <ui-col vertical-align="top" align="center" width="30">
+            <ui-image src="{{ item.head }}"></ui-image>
+          </ui-col>
+          <ui-col vertical-align="top" align="left" class="line">
+            <ui-view>
+              <ui-text class="name">{{ item.name }}</ui-text>
+              <ui-text class="time">{{ item.time }}</ui-text>
+            </ui-view>
+            <ui-view class="content">{{ item.content }}</ui-view>
+          </ui-col>
+          <ui-col vertical-align="top" align="right" width="40" space-right="10" class="line">
+            <ui-view>
+              1<ui-icon name="praise" size="18" color="#A3A3A3"></ui-icon>
+            </ui-view>
+          </ui-col>
+        </ui-row>
+      </ui-view>
+
+    </ui-view>
+    <ui-fixed-view bottom="0" class="input_box">
+      <ui-row class="input_box" height="46" bindclick="openPopup">
+        <ui-col vertical-align="middle" align="left" space-left="10">
+          <!-- <ui-input placeholder="输入评论" placeholder-style="color:#A8A8A8"></ui-input> -->
+          <!-- <ui-form action="/search" bindsubmit="commentSubmit">
+            <ui-input type="search" name="search" ui:model="{{ commentValue }}" placeholder="输入评论" placeholder-style="color:#A8A8A8"></ui-input>
+          </ui-form> -->
+          <ui-view>输入评论</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="60">
+          <ui-icon name="praise" size="24" color="#A3A3A3"></ui-icon>
+        </ui-col>
+      </ui-row>
+    </ui-fixed-view>
+
+
+
+    <!-- 全片输入框 -->
+
+    <ui-mask ui:model="{{ popupShow }}" height="100%" background="#F2F2F2" bindinit="popupInit">
+      <ui-view class="wrap" style="{{{ 'padding-top':statusBar+'px' }}}">
+        <ui-row height="46" class="head">
+          <ui-col vertical-align="middle" align="left" space-left="10" width="40" bindtap="cancel">
+            <ui-view>取消</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center">
+            <ui-view class="title">评论</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="right" width="40" space-right="10" bindtap="publish">
+            <ui-view class="publish {{ className }}">发布</ui-view>
+          </ui-col>
+        </ui-row>
+        <ui-textarea maxlength="-1" show-counter="false" focus="{{ popupShow }}" height="120" placeholder="发表评论" placeholder-style="color:#A8A8A8" value="{{ textareaValue }}" bindinput="changeTextarea"></ui-textarea>
+        <!-- <ui-input focus="{{ searchShow }}" height="120" placeholder="发表评论" placeholder-style="color:#A8A8A8" value="{{ textareaValue }}" bindinput="changeTextarea"></ui-input> -->
+        <!-- <ui-input type="search" name="search" ui:model="{{ textareaValue }}" placeholder="百人记" placeholder-style="color:#CECECE" focus="{{ popupShow }}"></ui-input> -->
+        <ui-view class="choose">
+          <ui-row height="50" bindtap="showActionSheet">
+            <ui-col vertical-align="middle" align="left" space-left="10">
+              <ui-view class="left">选择发布身份</ui-view>
+            </ui-col>
+            <ui-col vertical-align="middle" align="right">
+              <ui-view class="right">{{ identity }}</ui-view>
+            </ui-col>
+            <ui-col vertical-align="middle" align="right" width="30" space-right="10">
+              <ui-icon name="arrow-right" size="14" color="#DFDDDF"></ui-icon>
+            </ui-col>
+          </ui-row>
+        </ui-view>
+      </ui-view>
+    </ui-mask>
+    
+    <!-- <ui-mask class="full-screen-box" top="0" ui:model="popupShow" background="#fff">
+      <ui-view class="wrap" style="{{{ 'padding-top':statusBar+'px' }}}">
+        <ui-row height="46" class="head">
+          <ui-col vertical-align="middle" align="left" space-left="10" width="40" bindtap="cancel">
+            <ui-view>取消</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center">
+            <ui-view class="title">评论</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="right" width="40" space-right="10" bindtap="publish">
+            <ui-view class="publish {{ className }}">发布</ui-view>
+          </ui-col>
+        </ui-row>
+        <ui-input type="search" name="search" placeholder="百人记" placeholder-style="color:#CECECE" focus="{{ popupShow }}" show-clear="false"></ui-input>
+      </ui-view>
+    </ui-mask> -->
+
+  </ui-page>
+</template>

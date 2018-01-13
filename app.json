@@ -1,0 +1,115 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/details/details",
+    "pages/coffers/coffers",
+    "pages/funds/fundChoiceness/fundChoiceness",
+    "pages/funds/fundRank/fundRank",
+    "pages/funds/fundOptional/fundOptional",
+    "pages/funds/fundHold/fundHold",
+    "pages/manage/greenHand/greenHand",
+    "pages/manage/allProducts/allProducts",
+    "pages/manage/hold/hold"
+  ],
+  "theme": {
+    "theme-color": "#3399ff"
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextColor": "#666",
+    "navigationBarBorderColor": "rgba(231, 231, 231, 0.6)"
+  },
+  "tabBar": {
+    "color": "#BEBEBE",
+    "selectedColor": "#262626",
+    "borderColor": "#ddd",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconName": "home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/choiceness/choiceness",
+        "iconName": "choiceness",
+        "selectedIconName": "selected-choiceness",
+        "text": "精选"
+      },
+      {
+        "pagePath": "pages/service/service",
+        "iconName": "service",
+        "selectedIconName": "selected-service",
+        "text": "服务"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "selectedIconName": "selected-user",
+        "iconName": "user",
+        "text": "我"
+      }
+    ]
+  },
+  "pageTabBars": [
+    {
+      "id": "funds",
+      "color": "#828282",
+      "selectedColor": "#3C49FE",
+      "borderColor": "#ddd",
+      "backgroundColor": "#fff",
+      "list": [
+        {
+          "pagePath": "pages/funds/fundChoiceness/fundChoiceness",
+          "iconName": "funds-choiceness",
+          "selectedIconName": "crowd-funding06",
+          "text": "基金精选"
+        },
+        {
+          "pagePath": "pages/funds/fundRank/fundRank",
+          "iconName": "rank1",
+          "selectedIconName": "rank2",
+          "text": "业绩排行"
+        },
+        {
+          "pagePath": "pages/funds/fundOptional/fundOptional",
+          "iconName": "choiceness",
+          "selectedIconName": "selected-choiceness",
+          "text": "我的自选"
+        },
+        {
+          "pagePath": "pages/funds/fundHold/fundHold",
+          "iconName": "hold",
+          "selectedIconName": "home",
+          "text": "我的持仓"
+        }
+      ]
+    },
+    {
+      "id": "manage",
+      "color": "#828282",
+      "selectedColor": "#3C49FE",
+      "borderColor": "#ddd",
+      "backgroundColor": "#fff",
+      "list": [
+        {
+          "pagePath": "pages/manage/greenHand/greenHand",
+          "iconName": "funds-choiceness",
+          "selectedIconName": "crowd-funding06",
+          "text": "小白理财"
+        },
+        {
+          "pagePath": "pages/manage/allProducts/allProducts",
+          "iconName": "rank1",
+          "selectedIconName": "rank2",
+          "text": "全部产品"
+        },
+        {
+          "pagePath": "pages/manage/hold/hold",
+          "iconName": "hold",
+          "selectedIconName": "home",
+          "text": "我的持仓"
+        }
+      ]
+    }
+  ]
+}

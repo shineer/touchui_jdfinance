@@ -1,0 +1,77 @@
+<!--user.ui-->
+<template>
+  <ui-page
+  bindscrollstart="scrollStart"
+  bindscrollend="scrollEnd"
+  >
+    <ui-nav-bar slot="nav-bar" class="nav_bar">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="center" space-left="10" width="40">
+          <ui-icon name="setting" size="24" color="#525252"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center"></ui-col>
+        <ui-col vertical-align="middle" align="center" width="40" space-right="10">
+          <ui-icon name="message" size="24" color="#525252"></ui-icon>
+        </ui-col>
+      </ui-row>
+    </ui-nav-bar>
+    <ui-row height="100" class="head" bindtap="login">
+      <ui-col vertical-align="middle" align="left" width="75" space-left="15">
+        <ui-image src="{{ require('#/images/user_avatar_default.png') }}"></ui-image>
+      </ui-col>
+      <ui-col vertical-align="middle" align="left">
+        <ui-view class="title1">立即登录</ui-view>
+        <ui-view class="title2">首次登录 领888元大礼包</ui-view>
+      </ui-col>
+      <ui-col vertical-align="middle" align="right" width="60" space-right="10">
+        <ui-icon name="arrow-right" size="14" color="#DFDDDF"></ui-icon>
+      </ui-col>
+    </ui-row>
+    <ui-row height="90" class="head_nav" space-bottom="10">
+      <ui-col vertical-align="middle" align="center">
+        <ui-view>
+          <ui-icon name="sign-in" size="24" color="#212121"></ui-icon>
+        </ui-view>
+        <ui-text>签到</ui-text>
+      </ui-col>
+      <ui-col vertical-align="middle" align="center">
+        <ui-view>
+          <ui-icon name="clock-in" size="24" color="#212121"></ui-icon>
+        </ui-view>
+        <ui-text>早起打卡</ui-text>
+      </ui-col>
+      <ui-col vertical-align="middle" align="center">
+        <ui-view>
+          <ui-icon name="calendar" size="24" color="#212121"></ui-icon>
+        </ui-view>
+        <ui-text>日历</ui-text>
+      </ui-col>
+      <ui-col vertical-align="middle" align="center">
+        <ui-view>
+          <ui-icon name="task" size="24" color="#212121"></ui-icon>
+        </ui-view>
+        <ui-text>任务</ui-text>
+      </ui-col>
+    </ui-row>
+
+    <ui-view class="column_wrap" ui:for="{{ userList }}" ui:for-item="item">
+      <ui-row height="50"class="column_list" ui:for="{{ item.content }}" ui:for-item="item2">
+        <ui-col vertical-align="middle" align="center" width="40">
+          <ui-icon name="{{ item2.icon }}" size="24" color="{{ item2.iconColor }}"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left" class="line">
+          <ui-view>{{ item2.name }}</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="right" width="40" space-right="10" class="line">
+          <ui-icon name="arrow-right" size="14" color="#DFDDDF"></ui-icon>
+        </ui-col>
+      </ui-row>
+    </ui-view>
+
+    <!-- 个人中心的邀请好友 -->
+    <ui-fixed-view class="invite {{ className }}"></ui-fixed-view>
+
+
+
+  </ui-page>
+</template>

@@ -1,0 +1,260 @@
+// loading.less
+@loading-color: #3399ff;
+
+
+.ui-loading-box {
+  width: 100%;
+  text-align: center;
+  padding: 100rem/75 0;
+}
+
+.ui-loading-box>.ui-view {
+  display: inline-block;
+}
+
+.ui-loading-spin {
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgxMDB2MTAwSDB6Ii8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTlFOUU5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTMwKSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iIzk4OTY5NyIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgzMCAxMDUuOTggNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjOUI5OTlBIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDYwIDc1Ljk4IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0EzQTFBMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCA2NSA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNBQkE5QUEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTIwIDU4LjY2IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0IyQjJCMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgxNTAgNTQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjQkFCOEI5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDE4MCA1MCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDMkMwQzEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTE1MCA0NS45OCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDQkNCQ0IiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTEyMCA0MS4zNCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNEMkQyRDIiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDM1IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0RBREFEQSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgtNjAgMjQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTJFMkUyIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKC0zMCAtNS45OCA2NSkiLz48L3N2Zz4=') no-repeat;
+  background-size: cover;
+  width: 50rem/75;
+  height: 50rem/75;
+  -webkit-animation: img 1s steps(12, end) infinite;
+  animation: img 1s steps(12, end) infinite;
+  margin: 0 auto;
+}
+
+@keyframes img {
+  0% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
+
+
+.ui-loading-circle {
+  width: 20rem/75;
+  height: 20rem/75;
+  background: @loading-color;
+  border-radius: 50%;
+  margin-left: 15rem/75;
+  display: inline-block;
+}
+
+.ui-loading-circle-1 {
+  -webkit-animation: circle 1s linear infinite alternate;
+  animation: circle 1s linear infinite alternate;
+}
+
+.ui-loading-circle-2 {
+  -webkit-animation: circle 1s linear infinite alternate;
+  animation: circle 1s linear infinite alternate;
+  animation-delay: 0.5s;
+}
+
+.ui-loading-circle-3 {
+  -webkit-animation: circle 1s linear infinite alternate;
+  animation: circle 1s linear infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes circle {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+
+.ui-loading-pulse {
+  width: 8rem/75;
+  height: 40rem/75;
+  background: @loading-color;
+  margin: 8rem/75;
+  border-radius: 20rem/75;
+  display: inline-block;
+}
+
+.ui-loading-pulse-1 {
+  -webkit-animation: pulse 0.5s linear infinite alternate;
+  animation: pulse 0.5s linear infinite alternate;
+}
+
+.ui-loading-pulse-2 {
+  -webkit-animation: pulse 0.5s linear infinite alternate;
+  animation: pulse 0.5s linear infinite alternate;
+  animation-delay: 0.1s;
+}
+
+.ui-loading-pulse-3 {
+  -webkit-animation: pulse 0.5s linear infinite alternate;
+  animation: pulse 0.5s linear infinite alternate;
+  animation-delay: 0.2s;
+}
+
+.ui-loading-pulse-4 {
+  -webkit-animation: pulse 0.5s linear infinite alternate;
+  animation: pulse 0.5s linear infinite alternate;
+  animation-delay: 0.3s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(0);
+  }
+}
+
+
+.ui-loading-knock {
+  width: 15rem/75;
+  height: 15rem/75;
+  background: @loading-color;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.ui-loading-knock-first {
+  -webkit-animation: knock_first 1s ease-in infinite alternate;
+  animation: knock_first 1s ease-in infinite alternate;
+}
+
+.ui-loading-knock-last {
+  -webkit-animation: knock_last 1s ease-out infinite both alternate;
+  animation: knock_last 1s ease-out infinite both alternate;
+}
+
+@keyframes knock_first {
+  0% {
+    transform: translate(-30rem/75, -10rem/75);
+  }
+
+  10% {
+    transform: translate(-25rem/75, -8rem/75);
+  }
+
+  25% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes knock_last {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  75% {
+    transform: translate(0, 0);
+  }
+
+  90% {
+    transform: translate(28rem/75, -8rem/75);
+  }
+
+  100% {
+    transform: translate(30rem/75, -10rem/75);
+  }
+}
+
+.ui-loading-fade {
+  width: 30rem/75;
+  height: 30rem/75;
+  background: @loading-color;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-animation: fading_circle 1s ease-out infinite normal;
+  animation: fading_circle 1s ease-out infinite normal;
+  display: inline-block;
+}
+
+@keyframes fading_circle {
+  0% {  
+    transform: scale(0);  
+    opacity: 0.0;  
+  }  
+  25% {  
+    transform: scale(0.5);  
+    opacity: 0.1;  
+  }  
+  50% {  
+    transform: scale(1);  
+    opacity: 0.3;  
+  }  
+  75% {  
+    transform: scale(1.4);  
+    opacity: 0.5;  
+  }  
+  100% {  
+    transform: scale(1.8);  
+    opacity: 0.0;  
+  }  
+}
+
+
+// .ui-loading-mt {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: 82px;
+//   height: 107px;
+//   background: url('../img/mt_run.png') no-repeat;
+//   animation: mt-loading steps(8, end) .3s infinite;
+//   zoom: 0.5;
+// }
+
+// @keyframes mt-loading {
+//   100% {
+//     background-position: -656px 0;
+//   }
+// }
+
+.ui-loading-alipay {
+  .img-loading-circle{
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    background: url(../img/alipay_loading.png) no-repeat center center;
+    background-size: 100%;
+    animation: loading .9s linear infinite;
+  }
+}
+
+//图片旋转loading
+.ui-loading-img {
+  .img-loading-circle{
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    background: url('../img/rotate_img.png') no-repeat center center;
+    background-size: 100%;
+    animation: loading .9s linear infinite;
+  }
+  .text {
+    margin-top: 10px;
+    text-align: center;
+    color: #bcbcbc;
+    font-size: 14px;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

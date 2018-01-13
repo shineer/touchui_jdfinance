@@ -1,0 +1,52 @@
+// user.less
+.nav_bar{
+  background-color: #fff;
+}
+.head{
+  background-color: #fff;
+  .mix-1px(0, 0, 1, 0, #e0e0e0);
+  .ui-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .title1{
+    font-size: 16px;
+    color: #242424;
+  }
+  .title2{
+    font-size: 12px;
+    color: #BDA06D;
+  }
+}
+.head_nav{
+  background-color: #fff;
+  color: #747474;
+  .ui-text{
+    margin-top: 5px;
+  }
+}
+.column_wrap{
+  background-color: #fff;
+  margin-bottom: 10px;
+  .column_list{
+    .line{
+      .mix-1px(0, 0, 1, 0, #e0e0e0);
+    }
+  }
+}
+
+.invite{
+  width: 50px;
+  height: 50px;
+  // border-radius: 50%;
+  // background-color: red;
+  background: url('~images/fixed.png') no-repeat center center;
+  background-size: 100%;
+  transition: all .25s ease-in;
+  bottom: 100px;
+  right: 5px;
+  &.start {
+    right: -60px;
+  }
+}

@@ -1,0 +1,141 @@
+<!--fundOptional.ui-->
+<template>
+  <ui-page>
+    <ui-nav-bar slot="nav-bar" class="nav_bar">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="left" width="80" space-left="10" bindtap="navigateBack">
+          <ui-icon name="arrow-left" size="24" color="#3D3D3D"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center">
+          <ui-view class="title">我的自选</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="40" bindtap="showFullScreenSearch" ui:show="{{ isEdit }}">
+          <ui-icon name="search" size="20" color="#3D3D3D"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="40" space-right="10" bindtap="edit">
+          <ui-view class="edit">{{ editText }}</ui-view>
+        </ui-col>
+      </ui-row>
+    </ui-nav-bar>
+    <ui-fixed-view top="{{statusBar+46}}" class="top_tip" ui:show="{{ isEdit }}">
+      <ui-row height="35">
+        <ui-col vertical-align="middle" align="left" space-left="15">
+          <ui-view>2000起，给5万资产加速，领7天年华1%</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="right" space-right="10" width="30">
+          <ui-icon name="arrow-right" size="18" color="#FAAE42"></ui-icon>
+        </ui-col>
+      </ui-row>
+    </ui-fixed-view>
+
+    <ui-view ui:show="{{ isEdit }}">
+
+      <ui-view style="padding-top:35px">
+        <ui-view class="wrap">
+          <ui-row height="80" class="exponent">
+            <ui-col vertical-align="middle" align="left" space-left="15">
+              <ui-view>上证指数</ui-view>
+              <ui-text>3414.01</ui-text>
+              <ui-text>-0.23%</ui-text>
+            </ui-col>
+            <ui-col vertical-align="middle" align="center" width="3">
+              <ui-view class="line"></ui-view>
+            </ui-col>
+            <ui-col vertical-align="middle" align="left" space-left="15">
+              <ui-view>上证指数</ui-view>
+              <ui-text>3414.01</ui-text>
+              <ui-text>-0.23%</ui-text>
+            </ui-col>
+            <ui-col vertical-align="middle" align="center" width="3">
+              <ui-view class="line"></ui-view>
+            </ui-col>
+            <ui-col vertical-align="middle" align="left" space-left="15">
+              <ui-view>上证指数</ui-view>
+              <ui-text>3414.01</ui-text>
+              <ui-text>-0.23%</ui-text>
+            </ui-col>
+          </ui-row>
+        </ui-view>
+      </ui-view>
+
+      <ui-view class="wrap">
+        <ui-table
+          fixed-cell-height="{{false}}"
+          header="{{thisHeader}}"
+          ui:model="thisData"
+          alternating-row="{{true}}"
+          cell-height="80"
+          header-height='50'
+          ></ui-table>
+      </ui-view>
+
+    </ui-view>
+
+    <ui-view class="wrap wrap2"  ui:show="{{ isEdit ? false:true }}">
+      <ui-row height="50" class="edit_title">
+        <ui-col vertical-align="middle" align="left" space-left="15">
+          <ui-view>基金名称</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="right" space-right="10">
+          <ui-view>排序(长按拖动)</ui-view>
+        </ui-col>
+      </ui-row>
+      <ui-draggable-area
+      height="{{300}}"
+      col="{{1}}"
+      width="{{windowWidth}}"
+      children-height="{{70}}"
+      binddragend="dragend"
+      binddragstart="dragstart"
+      value="{{list}}"
+      direction="vertical"
+      longtap-style="none"
+      >
+        <ui-draggable-view ui:for="{{list}}">
+          <ui-swipe-out ref="swipe" operate-width="60" height="{{ item.height }}" bindchange="changeHandler(index)" can-swipe="{{item.canSwipe}}">
+            <ui-view slot="content">
+              <ui-row height="69" class="draggable_content">
+                <ui-col vertical-align="middle" width="50" space-left="15" bindtap="swiperOpen(index)">
+                  <ui-icon name="delete2" size="24" color="#F42125"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" align="left" class="line">
+                  <ui-view class="title">{{item.name}}</ui-view>
+                  <ui-view class="number">{{item.number}}</ui-view>
+                </ui-col>
+                <ui-col vertical-align="middle" align="right" width="80" space-right="10" class="line">
+                  <ui-icon name="draggable" size="24" color="#F42125"></ui-icon>
+                </ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view slot="operate">
+              <ui-view class="delete" bindtap="del(index)">删除</ui-view>
+            </ui-view>
+          </ui-swipe-out>
+        </ui-draggable-view>
+      </ui-draggable-area>
+    </ui-view>
+
+
+
+    <!-- <ui-swipe-out ref="swipe" operate-width="90" ui:for="{{list}}" height="{{ item.height }}" bindchange="changeHandler(index)" can-swipe="{{item.canSwipe}}">
+      <ui-view slot="content">
+        <ui-row height="70" class="draggable_content">
+          <ui-col vertical-align="middle" width="50" space-left="15">
+            <ui-icon name="delete" size="24" color="#F42125"></ui-icon>
+          </ui-col>
+          <ui-col vertical-align="middle" align="left" class="line">
+            <ui-view class="title">{{item.name}}</ui-view>
+            <ui-view class="number">{{item.number}}</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="right" width="80" space-right="10" class="line">
+            <ui-icon name="delete" size="24" color="#F42125"></ui-icon>
+          </ui-col>
+        </ui-row>
+      </ui-view>
+      <ui-view slot="operate">
+        <ui-view class="delete"></ui-view>
+      </ui-view>
+    </ui-swipe-out> -->
+
+  </ui-page>
+</template>

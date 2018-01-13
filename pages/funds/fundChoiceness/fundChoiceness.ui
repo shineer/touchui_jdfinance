@@ -1,0 +1,320 @@
+<!--fundChoiceness.ui-->
+<template>
+  <ui-page>
+     <ui-nav-bar slot="nav-bar" class="nav_bar">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="left" width="70" space-left="10" bindtap="navigateBack">
+          <ui-icon name="arrow-left" size="24" color="#fff"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center">
+          <ui-view class="title">基金</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="30" bindtap="showFullScreenSearch">
+          <ui-icon name="search" size="24" color="#fff"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="40">
+          <ui-icon name="message" size="24" color="#fff"></ui-icon>
+        </ui-col>
+      </ui-row>
+    </ui-nav-bar>
+
+    <ui-view class="wrap">
+      <ui-swiper pagination loop autoplay="{{ autoplay }}" class="banner">
+        <ui-swiper-item ui:for="{{ banner }}">
+          <ui-view class="banner_content">
+            <ui-image
+            src="{{ item.src }}"
+            ></ui-image>
+          </ui-view>
+        </ui-swiper-item>
+      </ui-swiper>
+    </ui-view>
+
+    <ui-view class="wrap">
+      <ui-view class="column">
+        <ui-view class="item" ui:for="{{ column }}" ui:for-item="item">
+          <ui-view>
+            <ui-icon name="{{ item.icon }}" size="24" color="#3A68E9"></ui-icon>
+            <ui-text block>{{ item.name }}</ui-text>
+            
+          </ui-view>
+          <ui-badge class="icon-badge" text="{{ item.badgeText }}" ui:if="{{ item.badgeText===''? false:true }}"></ui-badge>
+        </ui-view>
+      </ui-view>
+      <ui-row height="46" class="notice">
+        <ui-col vertical-align="middle" align="center" width="50">
+          <ui-icon name="notice" size="18" color="#F76B17"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left">
+          <ui-roller>
+            <ui-roller-item>
+              <ui-view>touchui 让企业移动开发降低80%成本</ui-view>
+            </ui-roller-item>
+            <ui-roller-item>
+              <ui-view>touchui 让企业移动开发降低80%成本</ui-view>
+            </ui-roller-item>
+          </ui-roller>
+        </ui-col>
+      </ui-row>
+    </ui-view>
+
+    <ui-view class="wrap">
+      <ui-swiper pagination loop autoplay="{{ autoplay2 }}" class="banner">
+        <ui-swiper-item>
+          <ui-view class="sign_in" bindtap="fundsDetails">
+            <ui-view class="title1">签到领收益 最高领10%</ui-view>
+            <ui-view class="title2">新手首选 | <ui-text>每日可领</ui-text></ui-view>
+            <ui-view class="title3">4.75<ui-text>%</ui-text><ui-text class="add">+</ui-text>10.00<ui-text>%</ui-text></ui-view>
+            <ui-view class="title4">7日综合年化收益</ui-view>
+            <ui-view class="sign">立即签到</ui-view>
+          </ui-view>
+        </ui-swiper-item>
+        <ui-swiper-item>
+          <ui-view class="sign_in" bindtap="fundsDetails">
+            <ui-view class="title1">新手入门 “跟上” 春季行情</ui-view>
+            <ui-view class="title2">春季精选 | <ui-text>近七年春天都在涨</ui-text></ui-view>
+            <ui-view class="title3"><ui-text class="add">+</ui-text>52.47<ui-text>%</ui-text></ui-view>
+            <ui-view class="title4">成立以来涨幅</ui-view>
+            <ui-view class="sign">0折尝鲜</ui-view>
+          </ui-view>
+        </ui-swiper-item>
+      </ui-swiper>
+    </ui-view>
+
+    <ui-view class="wrap">
+      <ui-row height="50" class="column_title">
+        <ui-col vertical-align="middle" align="left" space-left="15">
+          <ui-view>加速收益</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="rigth" space-right="10">
+          <ui-view class="right_title">活动专享</ui-view>
+        </ui-col>
+      </ui-row>
+
+      <ui-row height="80" class="speed_up">
+        <ui-col vertical-align="middle" align="left" space-left="15" width="80">
+          <ui-image
+            src="{{ require('#/images/speed_up.png') }}"
+          ></ui-image>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left">
+          <ui-view class="title1">领7天1%加速收益</ui-view>
+          <ui-view class="title2">2000起 | 给5W资产加速</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="right" space-right="10">
+          <ui-icon name="arrow-right" size="14" color="#D7D5D7"></ui-icon>
+        </ui-col>
+      </ui-row>
+    </ui-view>
+
+    <ui-view class="wrap">
+      <ui-row height="50" class="column_title">
+        <ui-col vertical-align="middle" align="left" space-left="15">
+          <ui-view>投资热点</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="rigth" space-right="10">
+          <ui-view class="right_title">
+            54℃ 点击查看 <ui-icon name="arrow-right" size="14" color="#D7D5D7"></ui-icon>
+          </ui-view>
+        </ui-col>
+      </ui-row>
+
+      <ui-row height="80" class="hotspot" bindtap="fundsDetails">
+        <ui-col vertical-align="middle" align="left" space-left="15" width="80">
+          <ui-view class="left">新手</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left" class="line">
+          <ui-view class="title1">2018新手开年礼</ui-view>
+          <ui-view class="title2">去年持有一年赚60%</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="rigth" space-right="10" width="110" class="line">
+          <ui-view class="right right2">
+            领5元红包 <ui-icon name="arrow-right" size="14" color="#D7D5D7"></ui-icon>
+          </ui-view>
+        </ui-col>
+      </ui-row>
+      <ui-row height="80" class="hotspot" bindtap="fundsDetails">
+        <ui-col vertical-align="middle" align="left" space-left="15" width="80">
+          <ui-view class="left">火爆</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left" class="line">
+          <ui-view class="title1">新手 “吃鸡” 专享</ui-view>
+          <ui-view class="title2">腾讯今年涨130%</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="rigth" space-right="10" width="110" class="line">
+          <ui-view class="right">
+            做腾讯股东 <ui-icon name="arrow-right" size="14" color="#D7D5D7"></ui-icon>
+          </ui-view>
+        </ui-col>
+      </ui-row>
+      <ui-row height="80" class="hotspot" bindtap="fundsDetails">
+        <ui-col vertical-align="middle" align="left" space-left="15" width="80">
+          <ui-view class="left left2">JBAT</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left" class="line">
+          <ui-view class="title1">BTA王者开放限购</ui-view>
+          <ui-view class="title2">一键投资JD腾讯阿里</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="rigth" space-right="10" width="110" class="line">
+          <ui-view class="right">
+            每天限购1万 <ui-icon name="arrow-right" size="14" color="#D7D5D7"></ui-icon>
+          </ui-view>
+        </ui-col>
+      </ui-row>
+      <ui-row height="80" class="hotspot" bindtap="fundsDetails">
+        <ui-col vertical-align="middle" align="left" space-left="15" width="80">
+          <ui-view class="left">吃鸡</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left" class="line">
+          <ui-view class="title1">腾讯创400元新高</ui-view>
+          <ui-view class="title2">港澳去年涨43%</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="rigth" space-right="10" width="110" class="line">
+          <ui-view class="right">
+            腾讯=赚钱 <ui-icon name="arrow-right" size="14" color="#D7D5D7"></ui-icon>
+          </ui-view>
+        </ui-col>
+      </ui-row>
+
+      <ui-view class="look_more">查看更多主题</ui-view>
+    </ui-view>
+
+    <ui-view class="wrap">
+      <ui-row height="50" class="column_title column_title2">
+        <ui-col vertical-align="middle" align="left" space-left="15">
+          <ui-view>买理财更赚钱</ui-view>
+        </ui-col>
+      </ui-row>
+      <ui-row height="80" class="money_matters" ui:for="{{ moneyMatters }}" >
+        <ui-col vertical-align="middle" align="left" space-left="15" width="150">
+          <ui-text block class="title1">{{ item.title1 }}</ui-text>
+          <ui-text block class="title2">{{ item.title1_1 }}</ui-text>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="3">
+          <ui-view class="line"></ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left" space-left="15">
+          <ui-text block class="title3">{{ item.title2 }}</ui-text>
+          <ui-text block class="title2">{{ item.title2_2 }}</ui-text>
+        </ui-col>
+      </ui-row>
+    </ui-view>
+
+
+    <ui-view class="wrap">
+      <ui-row height="50" class="column_title column_title2">
+        <ui-col vertical-align="middle" align="left" space-left="15">
+          <ui-view>投资助手</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="rigth" space-right="10">
+          <ui-view class="right_title">
+            1月基秘报告 <ui-icon name="arrow-right" size="14" color="#D7D5D7"></ui-icon>
+          </ui-view>
+        </ui-col>
+      </ui-row>
+      <ui-view class="credit_banner">
+        <ui-scroll-view scroll-x height="90">
+          <ui-view class="content">
+            <ui-view class="item" ui:for="{{ credit_banner }}"  bindtap="fundsDetails">
+              <ui-image
+                src="{{ item.src }}"
+              ></ui-image>
+            </ui-view>
+          </ui-view>
+        </ui-scroll-view>
+      </ui-view>
+    </ui-view>
+
+    <ui-view class="wrap">
+      <ui-row height="50" class="column_title column_title2">
+        <ui-col vertical-align="middle" align="left" space-left="15">
+          <ui-view>大数据推荐</ui-view>
+        </ui-col>
+      </ui-row>
+      <ui-row height="80" class="money_matters" ui:for="{{ moneyMatters2 }}" >
+        <ui-col vertical-align="middle" align="left" space-left="15" width="150">
+          <ui-text block class="title1">{{ item.title1 }}</ui-text>
+          <ui-text block class="title2">{{ item.title1_1 }}</ui-text>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="3">
+          <ui-view class="line"></ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left" space-left="15">
+          <ui-text block class="title3">{{ item.title2 }}</ui-text>
+          <ui-text block class="title2">{{ item.title2_2 }}</ui-text>
+        </ui-col>
+      </ui-row>
+    </ui-view>
+
+    <ui-view class="wrap">
+      <ui-row height="50" class="column_title column_title2">
+        <ui-col vertical-align="middle" align="left" space-left="15">
+          <ui-view>投资助手</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="rigth" space-right="10">
+          <ui-view class="right_title">
+            1月基秘报告 <ui-icon name="arrow-right" size="14" color="#D7D5D7"></ui-icon>
+          </ui-view>
+        </ui-col>
+      </ui-row>
+      <ui-view class="credit_banner credit_banner2">
+        <ui-scroll-view scroll-x height="115">
+          <ui-view class="content">
+            <ui-view class="item" ui:for="{{ credit_banner2 }}"  bindtap="fundsDetails">
+              <ui-image
+                src="{{ item.src }}"
+              ></ui-image>
+            </ui-view>
+          </ui-view>
+        </ui-scroll-view>
+      </ui-view>
+
+      <ui-view class="fund_article" ui:for="{{ fundArticle }}">
+        <ui-row class="title" height="30">
+          <ui-col vertical-align="middle" align="left" space-left="15" width="45">
+            <ui-image 
+              src="{{ item.head }}"
+            ></ui-image>
+          </ui-col>
+          <ui-col vertical-align="middle" align="left">
+            <ui-view class="name">{{ item.name }}</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="right" space-right="10" width="80">
+            <ui-view class="time">{{ item.time }}</ui-view>
+          </ui-col>
+        </ui-row>
+        <ui-row class="article_content">
+          <ui-col vertical-align="middle" align="left" space-left="15">
+            <ui-view class="title">{{ item.title }}</ui-view>
+            <ui-view class="content">{{ item.content }}</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="right" space-right="10" width="100">
+            <ui-image
+              src="{{ item.img }}"
+            ></ui-image>
+          </ui-col>
+        </ui-row>
+        <ui-row height="25" class="operation">
+          <ui-col vertical-align="middle" align="left" space-left="15" width="80">
+            <ui-view>
+              <ui-icon name="attention" size="18" color="#D5D5D5"></ui-icon>
+              <ui-text>118</ui-text>
+            </ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="left">
+            <ui-view>
+              <ui-icon name="selected-choiceness" size="16" color="#D5D5D5"></ui-icon>
+              <ui-text>1</ui-text>
+            </ui-view>
+          </ui-col>
+        </ui-row>
+
+      </ui-view>
+      <ui-view class="look_more">查看更多资讯</ui-view>
+
+
+
+    </ui-view>
+
+  </ui-page>
+</template>

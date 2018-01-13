@@ -1,0 +1,265 @@
+<!--home.ui-->
+<template> 
+  <ui-page>
+    <ui-nav-bar slot="nav-bar" class="nav_bar">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="left" width="60" space-left="15" bindtap="code">
+          <ui-icon name="code" size="24" color="#525252"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle">
+          <ui-tabs 
+          ink-bar-style="{{ { borderBottom: '2px solid #2F53FE', width: '60%' } }}"
+          width="{{ tabsWidth }}" bounce="false" class="type-common common{{ current }}" index="{{ current }}" bindchange="handleChange($event, 'current')" ink-bar>
+            <ui-tab>
+              <ui-view class="">
+                <ui-text class="icon_01">赚</ui-text>理财
+              </ui-view>
+            </ui-tab>
+            <ui-tab>
+              <ui-view class="">
+                <ui-text class="icon_02">借</ui-text>白条
+              </ui-view>
+            </ui-tab>
+            <ui-tab>
+              <ui-view class="">
+                <ui-text class="icon_03">花</ui-text>支付
+              </ui-view>
+            </ui-tab>
+          </ui-tabs>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="60"></ui-col>
+      </ui-row>
+    </ui-nav-bar>
+
+    <!-- <ui-swiper class="content" touch-angle="{{15}}" index="{{ current }}" bindchange="handleContentChange($event, 'current')">
+      <ui-swiper-item>
+        内容一
+      </ui-swiper-item>
+      <ui-swiper-item>
+        内容二
+      </ui-swiper-item>
+    </ui-swiper> -->
+
+    <ui-swiper class="tab_content_wrap" touch-release-on-edges="true" touch-angle="{{30}}" index="{{ current }}" bindchangeend="handleContentChange($event, 'current')">
+      <ui-swiper-item>
+        <!-- <ui-scroll-view  height="{{ contentHeight }}"  scroll-y> -->
+        <ui-view class="scroll_view" style="{{{ height:contentHeight+'px' }}}">
+          <ui-view class="tab_content" style="{{{ 'min-height':contentHeight+'px' }}}">
+            <ui-view class="money_matters_wrap">
+              <ui-view class="banner">
+                <ui-text block class="title1">京西金融</ui-text>
+                <ui-text block class="title2">赚钱可以更简单</ui-text>
+                <ui-view>首次登录送888元大礼包</ui-view>
+              </ui-view>
+              <ui-swiper loop autoplay="{{ autoplay }}">
+                <ui-swiper-item ui:for="{{ banner1 }}">
+                  <ui-image
+                    src="{{ item.src }}"
+                  ></ui-image>
+                </ui-swiper-item>
+              </ui-swiper>
+            
+              <ui-row ui:for="{{ moneyMatters }}" ui:for-item="item" height="80" space="0" class="money_matters" bindtap="navigateTo(item.navigateTo)">
+                <ui-col vertical-align="top" align="left" width="30">
+                  <ui-view class="icon_wrap" style="{{{ 'background-color':item.backgroundColor }}}">
+                    <ui-icon name="{{ item.icon }}" size="12" color="#fff"></ui-icon>
+                  </ui-view>
+                </ui-col>
+                <ui-col vertical-align="middle" align="left">
+                  <ui-view class="title1">{{ item.title1 }}</ui-view>
+                  <ui-view class="title1_1">{{ item.title1_1 }}</ui-view>
+                </ui-col>
+                <ui-col vertical-align="middle" align="right">
+                  <ui-view class="title2">{{ item.title2 }}</ui-view>
+                  <ui-view class="title2_1">{{ item.title2_2 }}</ui-view>
+                </ui-col>
+              </ui-row>
+
+              <ui-row height="60" class="category" space="40">
+                <ui-col vertical-align="middle" align="left" space="10">
+                  <ui-view class="title1">保险</ui-view>
+                  <ui-view class="title2">免费领赠险</ui-view>
+                </ui-col>
+                <ui-col width="10" class="line"></ui-col>
+                <ui-col vertical-align="middle" align="left" space="10">
+                  <ui-view class="title1">黄金</ui-view>
+                  <ui-view class="title2">10元起购</ui-view>
+                </ui-col>
+                <ui-col width="10" class="line"></ui-col>
+                <ui-col vertical-align="middle" align="left" space="10">
+                  <ui-view class="title1">股票</ui-view>
+                  <ui-view class="title2">一键开户</ui-view>
+                </ui-col>
+              </ui-row>
+              <ui-view class="login_look">登录查看更多理财</ui-view>
+            </ui-view>
+
+            <ui-view class="risk_free">
+              <ui-view class="title">
+                <ui-icon name="anquan" size="12" color="#3AB585"></ui-icon>至今交易无风险
+              </ui-view>
+              <ui-roller>
+                <ui-roller-item>
+                  <ui-row>
+                    <ui-col span="11">touchui 让企业移动开发降低80%成本</ui-col>
+                  </ui-row>
+                </ui-roller-item>
+                <ui-roller-item>
+                  <ui-row>
+                    <ui-col span="11">touchui 让企业移动开发降低80%成本</ui-col>
+                  </ui-row>
+                </ui-roller-item>
+                <ui-roller-item>
+                  <ui-row>
+                    <ui-col span="11">touchui 让企业移动开发降低80%成本</ui-col>
+                  </ui-row>
+                </ui-roller-item>
+              </ui-roller>
+            </ui-view>
+
+          </ui-view>
+        </ui-view>
+
+        <!-- </ui-scroll-view>  -->
+
+      </ui-swiper-item>
+      <ui-swiper-item>
+        <!-- <ui-scroll-view  height="{{ contentHeight }}"  scroll-y> -->
+        <ui-view class="scroll_view" style="{{{ height:contentHeight+'px' }}}">
+          <ui-view class="tab_content" style="{{{ 'min-height':contentHeight+'px' }}}">
+            <ui-view class="money_matters_wrap">
+              <ui-view class="banner banner1">
+                <ui-text block class="title1">京西金融</ui-text>
+                <ui-text block class="title2">随时随地有钱花</ui-text>
+                <ui-view>首次登录送888元大礼包</ui-view>
+              </ui-view>
+              <ui-swiper loop autoplay="{{ autoplay }}">
+                <ui-swiper-item ui:for="{{ banner2 }}">
+                  <ui-image
+                    src="{{ item.src }}"
+                  ></ui-image>
+                </ui-swiper-item>
+              </ui-swiper>
+            
+              <ui-row ui:for="{{ whiteBar }}" ui:for-item="item" height="80" space="0" class="money_matters">
+                <ui-col vertical-align="top" align="left" width="30">
+                  <ui-view class="icon_wrap" style="{{{ 'background-color':item.backgroundColor }}}">
+                    <ui-icon name="{{ item.icon }}" size="12" color="#fff"></ui-icon>
+                  </ui-view>
+                </ui-col>
+                <ui-col vertical-align="middle" align="left">
+                  <ui-view class="title1">{{ item.title1 }}</ui-view>
+                  <ui-view class="title1_1" ui:if="{{ item.title1_1!=='' }}">{{ item.title1_1 }}</ui-view>
+                  <ui-view class="title1_2" ui:else>{{ item.title1_2 }}</ui-view>
+                </ui-col>
+                <ui-col vertical-align="middle" align="right">
+                  <ui-view class="title2">{{ item.title2 }}</ui-view>
+                  <!-- <ui-view class="title2_1">{{ item.title2_2 }}</ui-view> -->
+                </ui-col>
+              </ui-row>
+              
+              <ui-view class="login_look login_look2">登录查看更多消费金融服务</ui-view>
+            </ui-view>
+
+          </ui-view>
+        </ui-view>
+
+        <!-- </ui-scroll-view>  -->
+      </ui-swiper-item>
+      <ui-swiper-item>
+        <!-- <ui-scroll-view  height="{{ contentHeight }}"  scroll-y> -->
+        <ui-view class="scroll_view" style="{{{ height:contentHeight+'px' }}}">
+          <ui-view class="tab_content" style="{{{ 'min-height':contentHeight+'px' }}}">
+            <ui-view class="money_matters_wrap">
+              <ui-view class="banner banner2">
+                <ui-text block class="title1">京西金融</ui-text>
+                <ui-text block class="title2">轻松付款享优惠</ui-text>
+                <ui-view>首次登录送888元大礼包</ui-view>
+              </ui-view>
+              <ui-swiper>
+                <ui-swiper-item ui:for="{{ banner3 }}">
+                  <ui-image
+                    src="{{ item.src }}"
+                  ></ui-image>
+                </ui-swiper-item>
+              </ui-swiper>
+            
+              <ui-row ui:for="{{ payment }}" ui:for-item="item" height="80" space="0" class="money_matters">
+                <ui-col vertical-align="top" align="left" width="30">
+                  <ui-view class="icon_wrap" style="{{{ 'background-color':item.backgroundColor }}}">
+                    <ui-icon name="{{ item.icon }}" size="12" color="#fff"></ui-icon>
+                  </ui-view>
+                </ui-col>
+                <ui-col vertical-align="middle" align="left">
+                  <ui-view class="title1">{{ item.title1 }}</ui-view>
+                  <ui-view class="title1_1">{{ item.title1_1 }}</ui-view>
+                </ui-col>
+                <ui-col vertical-align="middle" align="right">
+                  <ui-view class="title2_1">{{ item.title2 }}</ui-view>
+                  
+                </ui-col>
+              </ui-row>
+              
+              <ui-view class="login_look login_look2">登录享受更多支付优惠</ui-view>
+            </ui-view>
+          </ui-view>
+        </ui-view>
+        <!-- </ui-scroll-view>  -->
+      </ui-swiper-item>
+    </ui-swiper>
+
+
+
+    <!-- 启动页面 -->
+    <ui-fixed-view top="0" left="0" class="splash_wrap" ui:if="{{ isSplashSwiper }}" >
+      <ui-swiper pagination bindinit="swiperInit" class="splash_swiper">
+        <ui-swiper-item>
+          <ui-view class="splash_swiper_content splash_swiper01"></ui-view>
+        </ui-swiper-item>
+        <ui-swiper-item>
+          <ui-view class="splash_swiper_content splash_swiper02"></ui-view>
+        </ui-swiper-item>
+        <ui-swiper-item>
+          <ui-view class="splash_swiper_content splash_swiper03"></ui-view>
+        </ui-swiper-item>
+        <ui-swiper-item>
+          <ui-view class="splash_swiper_content splash_swiper04"></ui-view>
+          <ui-view class="splash_into" bindtap="splashInto">立即体验</ui-view>
+        </ui-swiper-item>
+      </ui-swiper>
+    </ui-fixed-view>
+
+    <!-- 引导页 -->
+    <ui-mask ui:model="showMask" class="guidance" background="rgba(0, 0, 0, 0.8)" bindtap="handleShowMask">
+      <ui-row height="46" space-top="{{ statusBar }}">
+        <ui-col width="60"></ui-col>
+        <ui-col vertical-align="bottom" align="center" class="guidance_head">
+          <ui-view style="width:100%;">
+            <ui-row height="40">
+              <ui-col vertical-align="middle" align="center">
+                <ui-view>
+                  <ui-text class="icon_01">赚</ui-text>理财
+                </ui-view>
+              </ui-col>
+              <ui-col vertical-align="middle" align="center">
+                <ui-view>
+                  <ui-text class="icon_02">借</ui-text>白条
+                </ui-view>
+              </ui-col>
+              <ui-col vertical-align="middle" align="center">
+                <ui-view>
+                  <ui-text class="icon_03">花</ui-text>支付
+                </ui-view>
+              </ui-col>
+            </ui-row>
+          </ui-view>
+        </ui-col>
+        <ui-col width="60"></ui-col>
+      </ui-row>
+      <ui-view class="guidance_content">
+
+      </ui-view>
+    </ui-mask>
+
+  </ui-page>
+</template>

@@ -1,0 +1,126 @@
+<!--allProducts.ui-->
+<template>
+  <ui-page>
+    <ui-view class="banner">
+      <ui-image src="{{ require('#/images/allProducts.png') }}"></ui-image>
+    </ui-view>
+
+    <ui-view class="sticky-in-relative-container" id="suggestion-title">
+      <ui-sticky class="header header1" stick-on-tap="stick-on-tap">
+        <ui-view>
+          <ui-row height="46" class="nav_top">
+            <ui-col vertical-align="middle" align="center" bindtap="openPopup(index)" ui:for="{{ navList }}" class="{{ item.active }}">
+              <ui-row height="46">
+                <ui-col vertical-align="middle" align="right" space-right="5">
+                  <ui-view>
+                    {{ item.name}}
+                  </ui-view>
+                </ui-col>
+                <ui-col vertical-align="middle" align="left" span="4" space-left="5">
+                  <ui-icon name="{{item.arrow}}" size="8" color="#878787;" class="{{ item.active }}"></ui-icon>
+                </ui-col>
+              </ui-row>
+            </ui-col>
+          </ui-row>
+        </ui-view>
+        <ui-view slot="sticky">
+          <ui-row height="46" class="nav_top">
+            <ui-col vertical-align="middle" align="center" bindtap="openPopup(index)" ui:for="{{ navList }}" class="{{ item.active }}">
+              <ui-row height="46">
+                <ui-col vertical-align="middle" align="right" space-right="5">
+                  <ui-view>
+                    {{ item.name}}
+                  </ui-view>
+                </ui-col>
+                <ui-col vertical-align="middle" align="left" span="4" space-left="5">
+                  <ui-icon name="{{item.arrow}}" size="8" color="#878787;" class="{{ item.active }}"></ui-icon>
+                </ui-col>
+              </ui-row>
+            </ui-col>
+          </ui-row>
+        </ui-view>
+      </ui-sticky>
+    </ui-view>
+    <ui-view class="content_list" ui:for="{{ content_list }}">
+      <ui-row height="50" class="title">
+        <ui-col vertical-align="middle" align="left">
+          <ui-view>{{ item.title }}</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" space-right="10" width="40">
+          <ui-icon name="arrow-right" size="16" color="#9B9B9B"></ui-icon>
+        </ui-col>
+      </ui-row>
+      <ui-row height="80" class="content">
+        <ui-col vertical-align="middle" align="left" width="150">
+          <ui-view><ui-text>{{ item.number }}</ui-text></ui-view>
+          <ui-text>{{ item.smallTitle }}</ui-text>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left">
+          <ui-view>{{ item.time }}<ui-text>{{ item.time2 }}</ui-text></ui-view>
+          <ui-text class="text2">{{ item.smallTitle2 }}</ui-text>
+        </ui-col>
+      </ui-row>
+    </ui-view>
+
+    <ui-popup ui:model="{{show1 }}" position="top" top="{{ popupTop }}" height="50" mask-style="{{{ top: popupTop+'px' }}}" bindhide="popHide" bindshow="popShow">
+      <ui-view class="top_pop">
+        <ui-scroll-view scroll-y="scroll-y">
+          <ui-form >
+            <ui-view class="time_content">
+              <ui-tags data="{{eatTime}}" bindchange="singleTap"></ui-tags>
+            </ui-view>
+          </ui-form>
+        </ui-scroll-view>
+      </ui-view>
+    </ui-popup>
+
+    <ui-popup ui:model="{{show2 }}" position="top" top="{{ popupTop }}" height="100" mask-style="{{{ top: popupTop+'px' }}}" bindhide="popHide1" bindshow="popShow1">
+      <ui-view class="top_pop">
+        <ui-scroll-view scroll-y="scroll-y">
+          <ui-form >
+            <ui-view class="time_content">
+              <ui-tags data="{{eatTime1}}" bindchange="singleTap1"></ui-tags>
+            </ui-view>
+          </ui-form>
+        </ui-scroll-view>
+      </ui-view>
+    </ui-popup>
+
+    <ui-popup ui:model="{{ show3 }}" position="top" top="{{ popupTop }}" height="50" mask-style="{{{ top: popupTop+'px' }}}" bindhide="popHide2" bindshow="popShow2">
+      <ui-view class="top_pop">
+        <ui-scroll-view scroll-y="scroll-y">
+          <ui-form >
+            <ui-view class="time_content">
+              <ui-tags data="{{eatTime2}}" bindchange="singleTap2"></ui-tags>
+            </ui-view>
+          </ui-form>
+        </ui-scroll-view>
+      </ui-view>
+    </ui-popup>
+
+    <ui-popup ui:model="{{ show4 }}" position="top" top="{{ popupTop }}" height="280" mask-style="{{{ top: popupTop+'px' }}}" bindhide="popHide3" bindshow="popShow3">
+      <ui-view class="top_pop">
+        <ui-scroll-view scroll-y="scroll-y">
+          <ui-form >
+            <ui-view class="time_content">
+              <ui-text>收益方式</ui-text>
+              <ui-tags data="{{eatTime3}}" bindchange="singleTap3_1"></ui-tags>
+            </ui-view>
+            <ui-view class="time_content">
+              <ui-text>起投金额1</ui-text>
+              <ui-tags data="{{service3}}" bindchange="singleTap3_2"></ui-tags>
+            </ui-view>
+          </ui-form>
+        </ui-scroll-view>
+        <ui-row border-top="border-top" height="50" class="sub">
+          <ui-col vertical-align="middle" align="center" border-right="border-right" bindtap="formReset">
+            重置
+          </ui-col>
+          <ui-col vertical-align="middle" align="center" bindtap="change3" class="complete">
+            完成
+          </ui-col>
+        </ui-row>
+      </ui-view>
+    </ui-popup>
+  </ui-page>
+</template>
