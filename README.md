@@ -34,8 +34,8 @@
 
 ##### ios下载：
 
- 
+ <img src="http://images.uileader.com/20180114/ab779caa-155f-44ba-ac68-783b83c81a64.png" />
 
 ##### 安卓下载：
 
- <img src="http://images.uileader.com/20180113/eb660849-fc11-4f6e-a2af-bdd2466e3445.png" />
+ <img src="http://images.uileader.com/20180114/14e1be9c-02b1-41a3-af34-dffc884364c6.png" />
