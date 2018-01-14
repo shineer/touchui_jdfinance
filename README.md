@@ -30,6 +30,8 @@
 
 
 
+如果在ios下，打开应用时，提示未受信任的企业级开发者，查看 http://www.uileader.com/touchui_doc/quickstart/iosPublish/trust
+
 ##### web访问：
 
  <img src="http://images.uileader.com/20180113/54493fea-1c2b-42e0-ae68-cb94c2a950e3.jpeg" />
