@@ -95,10 +95,10 @@
           <ui-swipe-out ref="swipe" operate-width="60" height="{{ item.height }}" bindchange="changeHandler(index)" can-swipe="{{item.canSwipe}}">
             <ui-view slot="content">
               <ui-row height="69" class="draggable_content">
-                <ui-col vertical-align="middle" width="50" space-left="15" bindtap="swiperOpen(index)">
+                <!-- <ui-col vertical-align="middle" width="50" space-left="15" bindtap="swiperOpen(index)">
                   <ui-icon name="delete2" size="24" color="#F42125"></ui-icon>
-                </ui-col>
-                <ui-col vertical-align="middle" align="left" class="line">
+                </ui-col> -->
+                <ui-col vertical-align="middle" align="left" class="line" space-left="15">
                   <ui-view class="title">{{item.name}}</ui-view>
                   <ui-view class="number">{{item.number}}</ui-view>
                 </ui-col>
