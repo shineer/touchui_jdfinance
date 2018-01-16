@@ -1,6 +1,5 @@
 {
-  "navigationBarTitleText": "京西小金库",
-  "navigationBarBackgroundColor":"#fff",
-  "navigationBarTextColor":"#6A6A6A",
-  "backgroundColor": "#F9F9F9"
+  "navigationBarVisible": false,
+  "statusBarColor": "black",
+  "backgroundColor": "#F7F7F7"
 }

@@ -58,8 +58,9 @@
                   ></ui-image>
                 </ui-swiper-item>
               </ui-swiper>
-            
-              <ui-row ui:for="{{ moneyMatters }}" ui:for-item="item" height="80" space="0" class="money_matters" bindtap="navigateTo(item.navigateTo)">
+            </ui-view>
+            <ui-view class="wrap" ui:for="{{ moneyMatters }}" ui:for-item="item" bindtap="navigateTo(item.navigateTo)" hover-class="active">
+              <ui-row height="80" space="0" class="money_matters">
                 <ui-col vertical-align="top" align="left" width="30">
                   <ui-view class="icon_wrap" style="{{{ 'background-color':item.backgroundColor }}}">
                     <ui-icon name="{{ item.icon }}" size="12" color="#fff"></ui-icon>
@@ -74,26 +75,26 @@
                   <ui-view class="title2_1">{{ item.title2_2 }}</ui-view>
                 </ui-col>
               </ui-row>
-
-              <ui-row height="60" class="category" space="40">
-                <ui-col vertical-align="middle" align="left" space="10">
+            </ui-view>
+            <ui-view class="wrap" style="padding-top:20px">
+              <ui-row height="60" class="category" space-bottom="20">
+                <ui-col vertical-align="middle" align="left" space="10" bindtap="login">
                   <ui-view class="title1">保险</ui-view>
                   <ui-view class="title2">免费领赠险</ui-view>
                 </ui-col>
                 <ui-col width="10" class="line"></ui-col>
-                <ui-col vertical-align="middle" align="left" space="10">
+                <ui-col vertical-align="middle" align="left" space="10" bindtap="login">
                   <ui-view class="title1">黄金</ui-view>
                   <ui-view class="title2">10元起购</ui-view>
                 </ui-col>
                 <ui-col width="10" class="line"></ui-col>
-                <ui-col vertical-align="middle" align="left" space="10">
+                <ui-col vertical-align="middle" align="left" space="10" bindtap="login">
                   <ui-view class="title1">股票</ui-view>
                   <ui-view class="title2">一键开户</ui-view>
                 </ui-col>
               </ui-row>
               <ui-view class="login_look">登录查看更多理财</ui-view>
             </ui-view>
-
             <ui-view class="risk_free">
               <ui-view class="title">
                 <ui-icon name="anquan" size="12" color="#3AB585"></ui-icon>至今交易无风险
@@ -140,8 +141,9 @@
                   ></ui-image>
                 </ui-swiper-item>
               </ui-swiper>
-            
-              <ui-row ui:for="{{ whiteBar }}" ui:for-item="item" height="80" space="0" class="money_matters">
+            </ui-view>
+            <ui-view class="wrap" ui:for="{{ whiteBar }}" ui:for-item="item" hover-class="active" bindtap="login">
+              <ui-row height="80" space="0" class="money_matters">
                 <ui-col vertical-align="top" align="left" width="30">
                   <ui-view class="icon_wrap" style="{{{ 'background-color':item.backgroundColor }}}">
                     <ui-icon name="{{ item.icon }}" size="12" color="#fff"></ui-icon>
@@ -157,10 +159,8 @@
                   <!-- <ui-view class="title2_1">{{ item.title2_2 }}</ui-view> -->
                 </ui-col>
               </ui-row>
-              
-              <ui-view class="login_look login_look2">登录查看更多消费金融服务</ui-view>
             </ui-view>
-
+            <ui-view class="login_look login_look2">登录查看更多消费金融服务</ui-view>
           </ui-view>
         </ui-view>
 
@@ -183,8 +183,9 @@
                   ></ui-image>
                 </ui-swiper-item>
               </ui-swiper>
-            
-              <ui-row ui:for="{{ payment }}" ui:for-item="item" height="80" space="0" class="money_matters">
+            </ui-view>
+            <ui-view class="wrap"  ui:for="{{ payment }}" ui:for-item="item" hover-class="active" bindtap="login">
+              <ui-row height="80" space="0" class="money_matters">
                 <ui-col vertical-align="top" align="left" width="30">
                   <ui-view class="icon_wrap" style="{{{ 'background-color':item.backgroundColor }}}">
                     <ui-icon name="{{ item.icon }}" size="12" color="#fff"></ui-icon>
@@ -199,9 +200,8 @@
                   
                 </ui-col>
               </ui-row>
-              
-              <ui-view class="login_look login_look2">登录享受更多支付优惠</ui-view>
             </ui-view>
+            <ui-view class="login_look login_look2">登录享受更多支付优惠</ui-view>
           </ui-view>
         </ui-view>
         <!-- </ui-scroll-view>  -->

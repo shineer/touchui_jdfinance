@@ -275,14 +275,14 @@ export default {
       windowWidth: ui.WIN_WIDTH,
       el:0,
       list: [{
-        name: '前端',
+        name: '天虹巨力灵活配置混合',
         number:378456,
         id: 'id1',
         height:70,
         canSwipe: false
       }, {
-          name: '前端',
-          number: 378456,
+          name: '南方地产连结A',
+          number: 456123,
           id: 'id2',
           height: 70,
           canSwipe: false

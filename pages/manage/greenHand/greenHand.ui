@@ -4,7 +4,7 @@
     <ui-nav-bar slot="nav-bar" class="nav_bar">
       <ui-row height="46">
         <ui-col vertical-align="middle" align="left" width="40" space-left="10" bindtap="navigateBack">
-          <ui-icon name="arrow-left" size="16" color="#fff"></ui-icon>
+          <ui-icon name="arrow-left" size="20" color="#fff"></ui-icon>
         </ui-col>
         <ui-col vertical-align="middle" align="center">
           <ui-view class="title">小白理财</ui-view>

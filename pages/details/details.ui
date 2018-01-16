@@ -4,7 +4,7 @@
     <ui-nav-bar slot="nav-bar" class="nav_bar">
       <ui-row height="46">
         <ui-col vertical-align="middle" align="left" space-left="10"  width="40" bindtap="navigateBack">
-           <ui-icon name="arrow-left" size="16" color="#4E4E4E"></ui-icon>
+           <ui-icon name="arrow-left" size="20" color="#4E4E4E"></ui-icon>
         </ui-col>
         <ui-col vertical-align="middle" align="left" space-left="10">
           <ui-view class="title">动态详情</ui-view>

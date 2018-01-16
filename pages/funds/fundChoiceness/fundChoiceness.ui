@@ -4,16 +4,16 @@
      <ui-nav-bar slot="nav-bar" class="nav_bar">
       <ui-row height="46">
         <ui-col vertical-align="middle" align="left" width="70" space-left="10" bindtap="navigateBack">
-          <ui-icon name="arrow-left" size="24" color="#fff"></ui-icon>
+          <ui-icon name="arrow-left" size="20" color="#fff"></ui-icon>
         </ui-col>
         <ui-col vertical-align="middle" align="center">
           <ui-view class="title">基金</ui-view>
         </ui-col>
         <ui-col vertical-align="middle" align="center" width="30" bindtap="showFullScreenSearch">
-          <ui-icon name="search" size="24" color="#fff"></ui-icon>
+          <ui-icon name="search" size="20" color="#fff"></ui-icon>
         </ui-col>
         <ui-col vertical-align="middle" align="center" width="40">
-          <ui-icon name="message" size="24" color="#fff"></ui-icon>
+          <ui-icon name="message" size="20" color="#fff"></ui-icon>
         </ui-col>
       </ui-row>
     </ui-nav-bar>
