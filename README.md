@@ -34,7 +34,7 @@
 
 ##### web访问：
 
- <img src="http://images.uileader.com/20180113/54493fea-1c2b-42e0-ae68-cb94c2a950e3.jpeg" />
+ <img src="http://images.uileader.com/20180116/b2a766df-64ee-4549-8fd1-67ce62c5f618.png" />
 
 ##### ios下载：
 
