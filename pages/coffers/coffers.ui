@@ -56,7 +56,7 @@
 
       <ui-view class="wrap">
         <ui-view class="column_title">买理财更赚钱</ui-view>
-        <ui-row height="80" class="money_matters" ui:for="{{ moneyMatters }}" >
+        <ui-row height="80" class="money_matters" ui:for="{{ moneyMatters }}" bindtap="chart">
           <ui-col vertical-align="middle" align="left" space-left="15" width="130">
             <ui-text block class="title1">{{ item.title1 }}</ui-text>
             <ui-text block class="title2">{{ item.title1_1 }}</ui-text>

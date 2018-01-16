@@ -1,0 +1,112 @@
+// chart.less
+.nav_bar{
+  background: #fff;
+  .title{
+    color: #3D3D3D;
+    font-size: 16px;
+  }
+}
+.wrap{
+  background-color: #fff;
+  margin-bottom: 10px;
+  height: auto;
+}
+.top_content{
+  padding-top: 20px;
+  .line{
+    width: 1px;
+    height:20px;
+    background-color: #ececec;
+  }
+  .text{
+    color: #B0B0B0;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .ui-view{
+    font-size: 30px;
+    color: #3F4652;
+  }
+}
+.bottom_content{
+  .mix-1px(0, 0, 1, 0, #ececec);
+  .ui-view{
+    font-size: 16px;
+  }
+  .ui-text{
+    color:#959595;
+    font-size: 14px;
+  }
+}
+
+.ui-tabs{
+  background-color: #fff;
+  padding-bottom: 1px;
+  .ui-tab{
+    line-height: 40px;
+  }
+}
+.tab_content{
+  .ui-segment{
+    width: 80%;
+    margin: 20px auto;
+    .ui-segment-item{
+      color: #9F9F9F;
+      border-top: 1px solid #ececec;
+      border-bottom: 1px solid #ececec;
+    }
+    .ui-segment-item:first-child{
+      border-right: 1px solid #ececec;
+      border-left: 1px solid #ececec;
+    }
+    .ui-segment-item:not(:first-child):not(:last-child){
+      border-right: 1px solid #ececec;
+    }
+    .ui-segment-item:last-child{
+      border-right: 1px solid #ececec;
+    }
+    .ui-segment-item.active{
+      color: #396FE8;
+      background: transparent;
+    }
+  }
+}
+.performance{
+  background-color:#fff;
+  .title{
+    color: #4C4C4C;
+    font-size: 14px;
+    line-height: 40px;
+    padding-left: 10px;
+  }
+  .table-header{
+    border-bottom:0;
+  }
+  .table-header-column{
+    background-color:#fff;
+    border:0;
+    color:#666
+  }
+  .table-data-row,.table-data-cell{
+    border:0;
+  }
+  .more{
+    font-size: 14px;
+    color: #898989;
+    line-height: 40px;
+    text-align: center;
+  }
+}
+.ui-fixed-view{
+  width: 100%;
+  background-color: #4174E9;
+  z-index: 99;
+  .ui-view{
+    color: #fff;
+    font-size: 12px;
+  }
+  .ui-text{
+    color: #fff;
+    font-size: 14px;
+  }
+}

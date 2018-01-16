@@ -14,6 +14,7 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+
 .icon-praise:before { content: "\e600"; }
 
 .icon-wexin:before { content: "\e644"; }
@@ -141,6 +142,8 @@
 .icon-fundChoiceness04:before { content: "\e637"; }
 
 .icon-record:before { content: "\e98f"; }
+
+.icon-store:before { content: "\e640"; }
 
 .icon-bill:before { content: "\e626"; }
 

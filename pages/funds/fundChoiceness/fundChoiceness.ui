@@ -91,7 +91,7 @@
         </ui-col>
       </ui-row>
 
-      <ui-row height="80" class="speed_up">
+      <ui-row height="80" class="speed_up" bindtap="chart">
         <ui-col vertical-align="middle" align="left" space-left="15" width="80">
           <ui-image
             src="{{ require('#/images/speed_up.png') }}"
@@ -185,7 +185,7 @@
           <ui-view>买理财更赚钱</ui-view>
         </ui-col>
       </ui-row>
-      <ui-row height="80" class="money_matters" ui:for="{{ moneyMatters }}" >
+      <ui-row height="80" class="money_matters" ui:for="{{ moneyMatters }}" bindtap="chart">
         <ui-col vertical-align="middle" align="left" space-left="15" width="150">
           <ui-text block class="title1">{{ item.title1 }}</ui-text>
           <ui-text block class="title2">{{ item.title1_1 }}</ui-text>
@@ -231,7 +231,7 @@
           <ui-view>大数据推荐</ui-view>
         </ui-col>
       </ui-row>
-      <ui-row height="80" class="money_matters" ui:for="{{ moneyMatters2 }}" >
+      <ui-row height="80" class="money_matters" ui:for="{{ moneyMatters2 }}" bindtap="chart" >
         <ui-col vertical-align="middle" align="left" space-left="15" width="150">
           <ui-text block class="title1">{{ item.title1 }}</ui-text>
           <ui-text block class="title2">{{ item.title1_1 }}</ui-text>
@@ -269,7 +269,7 @@
         </ui-scroll-view>
       </ui-view>
 
-      <ui-view class="fund_article" ui:for="{{ fundArticle }}">
+      <ui-view class="fund_article" ui:for="{{ fundArticle }}" hover-class="active" bindtap="details" >
         <ui-row class="title" height="30">
           <ui-col vertical-align="middle" align="left" space-left="15" width="45">
             <ui-image 

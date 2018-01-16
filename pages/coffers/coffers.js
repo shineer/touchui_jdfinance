@@ -155,6 +155,12 @@ export default {
       }]
     }
   },
-  methods: {},
+  methods: {
+    chart() {
+      ui.navigateTo({
+        url: '/pages/chart/chart'
+      })
+    }
+  },
   mounted () {}
 }

@@ -9,7 +9,8 @@
     "pages/funds/fundHold/fundHold",
     "pages/manage/greenHand/greenHand",
     "pages/manage/allProducts/allProducts",
-    "pages/manage/hold/hold"
+    "pages/manage/hold/hold",
+    "pages/chart/chart"
   ],
   "theme": {
     "theme-color": "#3399ff"

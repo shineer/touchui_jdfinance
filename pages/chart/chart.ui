@@ -1,0 +1,225 @@
+<!--chart.ui-->
+<template>
+  <ui-page>
+    <ui-nav-bar slot="nav-bar" class="nav_bar">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="left" width="40" space-left="10" bindtap="navigateBack">
+          <ui-icon name="arrow-left" size="16" color="#3D3D3D"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center">
+          <ui-view class="title">新起点股票</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="right" width="40" space-right="10">
+          <ui-icon name="share" size="20" color="#3D3D3D"></ui-icon>
+        </ui-col>
+      </ui-row>
+    </ui-nav-bar>
+    <!-- <ui-view style="{{{ height:contentHeight+'px' }}}"> -->
+    <ui-view style="padding-bottom:56px">
+
+    
+      <ui-view class="wrap">
+        <ui-row height="100" class="top_content">
+          <ui-col vertical-align="top" align="center">
+            <ui-text>最新净值(01-12)</ui-text>
+            <ui-view>1.5370</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center" width="3">
+            <ui-view class="line"></ui-view>
+          </ui-col>
+          <ui-col vertical-align="top" align="center">
+            <ui-text>日涨跌幅(%)</ui-text>
+            <ui-view style="color:#F76A16">0.52</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center" width="3">
+            <ui-view class="line"></ui-view>
+          </ui-col>
+          <ui-col vertical-align="top" align="center">
+            <ui-text style="font-size:16px;color:#F76A16">中分险</ui-text>
+            <ui-view style="font-size:16px;margin-top:10px;">股票型</ui-view>
+          </ui-col>
+        </ui-row>
+      </ui-view>
+
+      <ui-view class="wrap">
+        <ui-tabs class="type-common" index="{{ current }}"  bindchange="handleChange($event, 'current')" ink-bar>
+          <ui-tab>收益走势</ui-tab>
+          <ui-tab>实时估值</ui-tab>
+          <ui-tab>单位净值</ui-tab>
+        </ui-tabs>
+
+        <ui-swiper class="tab_content" style="{{{ height:swiperHeight+'px' }}}" index="{{ current }}" allow-touch-move="false">
+          <ui-swiper-item>
+              <ui-segment bindchange="segment">
+                <ui-segment-item>
+                  月
+                </ui-segment-item>
+                <ui-segment-item>
+                  季
+                </ui-segment-item>
+                <ui-segment-item>
+                  半年
+                </ui-segment-item>
+                <ui-segment-item>
+                  年
+                </ui-segment-item>
+              </ui-segment>
+
+              <ui-view style="text-align: center">
+                <ui-line
+                  value="{{lineData}}"
+                  width="{{winWidth}}"
+                  height="250"
+                  is-animated="true"
+                  color-schema = "{{lineData.colorSchema}}"
+                  grid="horizontal"
+                  line-width = "1"
+                  tooltip="true"
+                  body-fill-color="rgba(0,0,0,.7)"
+                  tooltip-width="150"
+                  title-fill-color="#fff"
+                  tooltip-text-color="#fff"
+                  border-stroke-color="#fff"
+                  margin = "{{ margin }}"
+                  ></ui-line>
+                <ui-legend
+                  value="{{legendData.legend}}"
+                  width="{{winWidth}}"
+                  height="40"
+                  is-animated="true"
+                  is-horizontal="true"
+                  color-schema="{{legendData.colorSchema}}">
+                </ui-legend>
+              </ui-view>
+              <ui-view class="performance">
+                <ui-view class="title">历史业绩</ui-view>
+                <ui-table 
+                header="{{thisHeader}}" 
+                alternating-row="true" 
+                header-height="40" 
+                ui:model="thisData"></ui-table>
+                <ui-view class="more">查看更多</ui-view>
+              </ui-view>
+          </ui-swiper-item>
+          <ui-swiper-item>
+              <ui-stacked-area
+                value="{{areaChartData.data}}"
+                width="{{winWidth}}"
+                height="250"
+                is-animated="true"
+                grid="horizontal"
+                color-schema="{{areaChartData.colorSchema}}"
+                body-fill-color="rgba(0,0,0,.7)"
+                tooltip-width="150"
+                title-fill-color="#fff"
+                text-fill-color="#fff"
+                tooltip-text-color="#fff"
+                border-stroke-color="#fff"
+                area-opacity="0.1"
+                show-circle="false"
+                margin = "{{ margin }}"
+              ></ui-stacked-area>
+              <ui-view class="performance">
+                <ui-view class="title">相关股票</ui-view>
+                <ui-table 
+                header="{{thisHeader2}}" 
+                alternating-row="true" 
+                header-height="40" 
+                ui:model="thisData2"></ui-table>
+                <ui-view class="more">查看更多</ui-view>
+              </ui-view>
+          </ui-swiper-item>
+          <ui-swiper-item>
+            <ui-segment bindchange="segment2">
+              <ui-segment-item>
+                月
+              </ui-segment-item>
+              <ui-segment-item>
+                季
+              </ui-segment-item>
+              <ui-segment-item>
+                半年
+              </ui-segment-item>
+              <ui-segment-item>
+                年
+              </ui-segment-item>
+            </ui-segment>
+
+            <ui-stacked-area
+              value="{{areaChartData2.data}}"
+              width="{{winWidth}}"
+              height="250"
+              is-animated="true"
+              grid="horizontal"
+              color-schema="{{areaChartData2.colorSchema}}"
+              body-fill-color="rgba(0,0,0,.7)"
+              tooltip-width="150"
+              title-fill-color="#fff"
+              text-fill-color="#fff"
+              tooltip-text-color="#fff"
+              border-stroke-color="#fff"
+              area-opacity="0.1"
+              show-circle="false"
+              margin = "{{ margin }}"
+            ></ui-stacked-area>
+            <ui-view class="performance">
+              <ui-view class="title">历史净值</ui-view>
+              <ui-table 
+              header="{{thisHeader3}}" 
+              alternating-row="true" 
+              header-height="40" 
+              ui:model="thisData3"></ui-table>
+              <ui-view class="more">查看更多</ui-view>
+            </ui-view>
+
+          </ui-swiper-item>
+        </ui-swiper>
+
+
+
+      </ui-view>
+
+
+
+
+
+
+
+      <ui-view class="wrap" style="padding-left:10px">
+        <ui-row height="50" class="bottom_content" ui:for="{{ bottomContent }}">
+          <ui-col vertical-align="middle" align="left" width="80">
+            <ui-view>{{ item.title }}</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="right">
+            <ui-text>{{ item.content }}</ui-text>
+          </ui-col>
+          <ui-col vertical-align="middle" align="right" space-right="10" width="30">
+            <ui-icon name="arrow-right" size="16" color="#DFDDDF"></ui-icon>
+          </ui-col>
+        </ui-row>
+
+      </ui-view>
+
+      <ui-fixed-view bottom="0">
+        <ui-row height="56">
+          <ui-col vertical-align="middle" align="center">
+            <ui-icon name="store" color="#fff" size="18"></ui-icon>
+            <ui-view>店铺</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center" bindtap="optional">
+            <ui-icon name="{{icon}}" color="{{ isOptional ? '#EA9709':'#fff' }}" size="18"></ui-icon>
+            <ui-view>加自选</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center">
+            <ui-text>申购</ui-text>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center">
+            <ui-text>定投</ui-text>
+          </ui-col>
+        </ui-row>
+      </ui-fixed-view>
+
+
+    </ui-view>
+  </ui-page>
+</template>

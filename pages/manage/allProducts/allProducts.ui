@@ -41,7 +41,7 @@
         </ui-view>
       </ui-sticky>
     </ui-view>
-    <ui-view class="content_list" ui:for="{{ content_list }}">
+    <ui-view class="content_list" ui:for="{{ content_list }}" bindtap="chart">
       <ui-row height="50" class="title">
         <ui-col vertical-align="middle" align="left">
           <ui-view>{{ item.title }}</ui-view>

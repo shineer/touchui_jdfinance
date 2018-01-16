@@ -63,7 +63,7 @@
         </ui-col>
       </ui-row>
       <ui-view class="search_nav">
-        <ui-view class="item" ui:for="{{ searchNav }}">
+        <ui-view class="item" ui:for="{{ searchNav }}" bindtap="hideFullScreenSearch(item.name)">
           <ui-view>
             <ui-view class="icon">
               <ui-icon name="{{ item.icon }}" size="16" color="#0B48FE"></ui-icon>

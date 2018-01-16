@@ -240,10 +240,13 @@ export default {
     },
 
     // 退出搜索
-    hideFullScreenSearch() {
+    hideFullScreenSearch(title) {
       this.searchShow = false
       ui.setStatusBarStyle({
         style: 'dark'
+      })
+      ui.showToast({
+        title: title
       })
     },
     // 清空历史记录

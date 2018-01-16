@@ -230,6 +230,16 @@ export default {
           icon: collect
         }
       ])
+    },
+    chart() {
+      ui.navigateTo({
+        url: '/pages/chart/chart'
+      })
+    },
+    details(){
+      ui.navigateTo({
+        url: '/pages/details/details'
+      })
     }
   },
   mounted () {}

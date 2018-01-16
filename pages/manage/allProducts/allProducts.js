@@ -348,6 +348,12 @@ export default {
       this.className2 = 'active'
       this.isDistrict = false
       this.isSubway = true
+    },
+
+    chart(){
+      ui.navigateTo({
+        url: '/pages/chart/chart'
+      })
     }
   },
   mounted() {
