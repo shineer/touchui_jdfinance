@@ -206,6 +206,23 @@ export default {
     },
     swiperInit() {
       this.hideSplash()
+    },
+    login(){
+      import(`#/pages/dialogs/loginInterface.ui`).then((content) => {
+        ui.showDialog({
+          // 窗体标题
+          content: content,
+          statusBarColor: 'dark',
+          // 向dialog1.ui传入数据
+          data: {
+
+          },
+          // 接收ui.hideDialog回传的数据
+          onHide: (data) => {
+
+          }
+        })
+      })
     }
   },
   mounted () {
