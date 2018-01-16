@@ -1105,7 +1105,7 @@ export default {
       ],
       icon:'choiceness',
       isOptional:false,
-      isApp: ui.IS_APP
+      isTip:true
     }
   },
   methods: {
@@ -1144,16 +1144,12 @@ export default {
         this.isOptional=true
       }
     },
-    share() {
-      if (this.isApp){
-        ui.app.shareMask = true
-        ui.app.href = 'http://www.uileader.com/touchui_jdfinance/#/pages/share/chart/chart'
-      }
+    close() {
+      this.isTip = false
     }
   },
   mounted () {
     this.lineData = this.data[0]
     this.areaChartData2 = this.chartMore[0]
-    console.log(this.isApp)
   }
 }

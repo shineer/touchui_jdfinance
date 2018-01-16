@@ -55,7 +55,44 @@ export default {
           icon: 'service-number',
           name: '服务号'
         },
-      ]
+      ],
+
+      // 分享
+      winHeight: ui.WIN_HEIGHT,
+      shareMask:false,
+      shareColumn:[
+        {
+          icon: 'friends_circle',
+          name: '朋友圈',
+          bgColor: '#41C451',
+          share:'weixin_timeline'
+        }, {
+          icon: 'weixin',
+          name: '微信好友',
+          bgColor: '#3CBC4B',
+          share: 'weixin_message'
+        }, {
+          icon: 'QQ',
+          name: 'QQ好友',
+          bgColor: '#27A9EE',
+          share: 'qq'
+        }, {
+          icon: 'weibo',
+          name: '微博',
+          bgColor: '#F53B43',
+          share: 'weibo'
+        }
+      ],
+      showTime: ['0.1s', '0.2s', '0.3s', '0.4s', '0.5s', '0.6s'],
+      hideTime: ['0.6s', '0.5s', '0.4s', '0.3s', '0.2s', '0.1s'],
+      className:'',
+      animationDuration: ['0.1s', '0.2s', '0.3s', '0.4s', '0.5s', '0.6s'],
+      target: 'qq',
+      type: 'link',
+      icon: 'http://images.uileader.com/20180116/96d4b45d-4765-41fd-bc29-85919ddb4057.png',
+      title: '高仿京东金融',
+      content: '官方推出的TOUCH UI应用案例',
+      href: 'http://www.uileader.com/touchui_jdfinance/#/pages/share/greenHand/greenHand',
     }
   },
   computed: {
@@ -304,6 +341,39 @@ export default {
       ui.showToast({
         title: this.historyContent[index].text
       })
+    },
+
+    // 分享
+    maskHide(share) {
+      // setTimeout(() => {
+        this.shareMask = false
+      // }, 500);
+      console.log(share)
+      // this.target = val
+      this.target = share
+      ui.share({
+        target: this.target,
+        type: this.type,
+        icon: this.icon,
+        title: this.title,
+        content: this.content,
+        href: this.href
+      }, function () {
+        console.log('分享成功')
+      }, function () {
+        console.log('分享失败')
+      })
+
+
+    },
+    maskShow() {
+      this.className='active'
+      this.animationDuration = this.showTime
+    },
+    columnHide(){
+      this.className = 'hideActive'
+      this.animationDuration=this.hideTime
+      // this.shareMask = false
     }
 
   },

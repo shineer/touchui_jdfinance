@@ -24,22 +24,13 @@ export default {
           content: '用户至少在赎回开放日前一天预约赎回，该产品美格30天为一个赎回开放日，最近一次赎回开放日为2018-02-14。预约成功后，资金将会在指定赎回开放日后1个交易日内转入原支付账户（具体时间视银行而定），如遇节假日顺延，节假日期间仍享受收益。'
         }
       ],
-      isTip:true,
-      isApp: ui.IS_APP
+      isTip1: true,
+      isTip2:true
     }
   },
   methods: {
-    close(){
-      this.isTip=false
-    },
-    navigateBack() {
-      ui.navigateBack()
-    },
-    share(){
-      if (this.isApp) {
-        ui.app.shareMask = true
-        ui.app.href= 'http://www.uileader.com/touchui_jdfinance/#/pages/share/greenHand/greenHand'
-      }
+    close(value){
+      this[value]=false
     }
   },
   mounted () {}

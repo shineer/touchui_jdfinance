@@ -109,5 +109,24 @@
       </ui-view>
     </ui-mask>
 
+    <ui-mask ui:model="shareMask" class="share_mask" hide-delay="400" top="0" blur="light" bindshow="maskShow" bindtap="columnHide">
+      <ui-view class="column_wrap {{ className }}">
+
+        <ui-view class="column_content" ui:for="{{ shareColumn }}" style="{{{ 'animation-duration':animationDuration[index] }}}" bindtap="maskHide(item.share)">
+          <ui-view >
+            <ui-view style="{{{ 'background-color':item.bgColor }}}">
+              <ui-icon name="{{ item.icon }}" size="30" color="#fff"></ui-icon>
+            </ui-view>
+            <ui-text block>{{ item.name }}</ui-text>
+          </ui-view>
+        </ui-view>
+
+        <ui-view class="close" bindtap="maskHide">
+          <ui-icon name="close" size="20" color="#5E5E5E"></ui-icon>
+        </ui-view>
+
+      </ui-view>
+    </ui-mask>
+
   </ui-view>
 </template>

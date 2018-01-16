@@ -10,7 +10,10 @@
     "pages/manage/greenHand/greenHand",
     "pages/manage/allProducts/allProducts",
     "pages/manage/hold/hold",
-    "pages/chart/chart"
+    "pages/chart/chart",
+
+    "pages/share/greenHand/greenHand",
+    "pages/share/chart/chart"
   ],
   "theme": {
     "theme-color": "#3399ff"

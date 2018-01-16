@@ -1,7 +1,7 @@
 <!--greenHand.ui-->
 <template>
-  <ui-page>
-    <ui-nav-bar slot="nav-bar" class="nav_bar">
+  <ui-page top="0">
+    <!-- <ui-nav-bar slot="nav-bar" class="nav_bar">
       <ui-row height="46">
         <ui-col vertical-align="middle" align="left" width="40" space-left="10" bindtap="navigateBack">
           <ui-icon name="arrow-left" size="20" color="#fff"></ui-icon>
@@ -10,12 +10,30 @@
           <ui-view class="title">小白理财</ui-view>
         </ui-col>
         <ui-col vertical-align="middle" align="right" width="40" space-right="10" bindtap="share">
-          <ui-icon name="share" size="20" color="#fff" ui:show="{{ isApp }}"></ui-icon>
+          <ui-icon name="share" size="20" color="#fff"></ui-icon>
         </ui-col>
       </ui-row>
-    </ui-nav-bar>
+    </ui-nav-bar> -->
 
-    <ui-view class="top_tip" ui:show="{{ isTip }}">
+    <ui-view class="content_top" ui:show="{{ isTip1 }}">
+      <ui-row height="60">
+        <ui-col vertical-align="middle" align="left" width="40" space-left="10" bindtap="close('isTip1')">
+          <ui-icon name="close" size="16" color="#fff"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="40">
+          <ui-image src="{{ require('#/images/touchui-logo.png') }}"></ui-image>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left" space-left="10">
+          <ui-view>京西金融</ui-view>
+          <ui-view>使用TOUCH UI开发的综合案例</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="70" space-right="10">
+          <a href="https://www.pgyer.com/By4C"><ui-button type="primary">下载</ui-button></a>
+        </ui-col>
+      </ui-row>
+    </ui-view>
+
+    <ui-view class="top_tip" ui:show="{{ isTip2 }}">
       <ui-view class="title">定期理财最优质产品</ui-view>
       <ui-row height="40">
         <ui-col vertical-align="middle" align="right">
@@ -34,9 +52,9 @@
           <ui-view>安全理财</ui-view>
         </ui-col>
       </ui-row>
-      <ui-view class="close" bindtap="close">
+      <!-- <ui-view class="close" bindtap="close('isTip2')">
         <ui-icon name="close" size="16" color="#fff"></ui-icon>
-      </ui-view>
+      </ui-view> -->
     </ui-view>
 
     <ui-view class="wrap">
@@ -117,21 +135,15 @@
               <ui-text>{{ item.content }}</ui-text>
             </ui-col>
           </ui-row>
-          <!-- <ui-row height="40">
-            <ui-col vertical-align="middle" align="left"  space-left="10">
-              <ui-text>查看更多详情</ui-text>
-            </ui-col>
-            <ui-col vertical-align="middle" align="right" space-right="10">
-              <ui-icon name="arrow-right" size="16" color="#E0E0E0"></ui-icon>
-            </ui-col>
-          </ui-row> -->
         </ui-view>
       </ui-summary>
 
     </ui-view>
-    <ui-fixed-view bottom="57">
+    <ui-fixed-view bottom="0" class="content_bottom">
       <ui-view class="text">这款产品非常抢手，今日已有<ui-text>3641</ui-text>人购买</ui-view>
       <ui-view class="buy">立即购买</ui-view>
     </ui-fixed-view>
+
+    
   </ui-page>
 </template>
