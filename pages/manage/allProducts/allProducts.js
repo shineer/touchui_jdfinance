@@ -354,6 +354,9 @@ export default {
       ui.navigateTo({
         url: '/pages/chart/chart'
       })
+    },
+    navigateBack() {
+      ui.navigateBack()
     }
   },
   mounted() {

@@ -4,7 +4,7 @@
     <ui-nav-bar slot="nav-bar" class="nav_bar">
       <ui-row height="46">
         <ui-col vertical-align="middle" align="left" width="80" space-left="10" bindtap="navigateBack">
-          <ui-icon name="arrow-left" size="24" color="#3D3D3D"></ui-icon>
+          <ui-icon name="arrow-left" size="20" color="#3D3D3D"></ui-icon>
         </ui-col>
         <ui-col vertical-align="middle" align="center">
           <ui-view class="title">我的自选</ui-view>

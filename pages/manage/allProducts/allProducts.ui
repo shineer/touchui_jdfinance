@@ -1,6 +1,19 @@
 <!--allProducts.ui-->
 <template>
   <ui-page>
+ <ui-nav-bar slot="nav-bar" class="nav_bar">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="left" space-left="10"  width="40" bindtap="navigateBack">
+           <ui-icon name="arrow-left" size="20" color="#4E4E4E"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center">
+          <ui-view class="title">定期理财</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" width="40"></ui-col>
+      </ui-row>
+    </ui-nav-bar>
+
+
     <ui-view class="banner">
       <ui-image src="{{ require('#/images/allProducts.png') }}"></ui-image>
     </ui-view>
