@@ -160,10 +160,14 @@ export default {
 
     // 扫一扫
     code(){
+      ui.setStatusBarStyle({ style: 'light' })
       ui.scanCode({
         success: (res) => {
           console.log(res)
           ui.showToast({ title: '扫到了' + res.result+',开心不～' })
+        },
+        complete(){
+          ui.setStatusBarStyle({ style: 'dark' })
         }
       })
     },
