@@ -21,7 +21,9 @@
   "window": {
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTextColor": "#666",
-    "navigationBarBorderColor": "rgba(231, 231, 231, 0.6)"
+    "navigationBarBorderColor": "rgba(231, 231, 231, 0.6)",
+    "scrollType":"body",
+    "title":"京西金融"
   },
   "tabBar": {
     "color": "#BEBEBE",

@@ -2,5 +2,6 @@
   "navigationBarVisible": false,
   "statusBarColor": "black",
   "backgroundColor": "#F9F9F9",
-  "scrollType": "body"
+  "scrollType": "body",
+  "title": "新起点股票"
 }
